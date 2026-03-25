@@ -1,10 +1,25 @@
 [
   {
+    "name": "TRT 1",
+    "url": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
+    "category": "Genel",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6c/TRT_1_logo_%282012-2021%29.png",
+    "status": "working",
+    "response_time": 0
+  },
+  {
     "name": "TRT 1 Yedek",
     "url": "https://api.hitnova.net/s/trt1/mono.m3u8",
     "category": "Genel",
     "status": "working",
-    "response_time": 613.57
+    "response_time": 0
+  },
+  {
+    "name": "TRT 2",
+    "url": "https://tv-trt2.medya.trt.com.tr/master_1440.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
   },
   {
     "name": "ATV",
@@ -12,14 +27,14 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png",
     "status": "working",
-    "response_time": 5761.28
+    "response_time": 0
   },
   {
     "name": "ATV Yedek",
     "url": "https://api.hitnova.net/s/atv/mono.m3u8",
     "category": "Genel",
     "status": "working",
-    "response_time": 762.05
+    "response_time": 0
   },
   {
     "name": "Kanal D",
@@ -27,7 +42,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/a/a4/Kanal_D_logo.png",
     "status": "working",
-    "response_time": 795.65
+    "response_time": 0
   },
   {
     "name": "Show TV",
@@ -35,7 +50,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Logo_of_Show_TV.png",
     "status": "working",
-    "response_time": 938.3
+    "response_time": 0
   },
   {
     "name": "Star TV",
@@ -43,7 +58,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/9/92/Star_TV_.png",
     "status": "working",
-    "response_time": 1189.43
+    "response_time": 0
   },
   {
     "name": "Kanal 7",
@@ -51,7 +66,7 @@
     "category": "Genel",
     "logo": "https://static.wikia.nocookie.net/logopedia/images/c/ce/Kanal_7_logosu.png",
     "status": "working",
-    "response_time": 2781.07
+    "response_time": 0
   },
   {
     "name": "TV8",
@@ -59,14 +74,84 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png",
     "status": "working",
-    "response_time": 713.78
+    "response_time": 0
   },
   {
     "name": "TV8.5",
     "url": "https://api.hitnova.net/s/tv85/mono.m3u8",
     "category": "Genel",
     "status": "working",
-    "response_time": 661.21
+    "response_time": 0
+  },
+  {
+    "name": "Now TV",
+    "url": "https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv_720p.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Now TV Yedek 1",
+    "url": "https://api.hitnova.net/s/nowtv/mono.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Now TV Yedek 2",
+    "url": "https://live.nowtvde.com/hls/live.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Fox TV",
+    "url": "https://api.hitnova.net/s/fox/mono.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TV360",
+    "url": "https://api.hitnova.net/s/tv360/mono.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Teve2",
+    "url": "https://api.hitnova.net/s/teve2/mono.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Beyaz TV",
+    "url": "https://api.hitnova.net/s/beyaztv/mono.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Flash TV",
+    "url": "https://api.hitnova.net/s/flashtv/mono.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Show Max",
+    "url": "https://api.hitnova.net/s/showmax/mono.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Show Türk",
+    "url": "https://api.hitnova.net/s/showturk/mono.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 0
   },
   {
     "name": "TRT Haber",
@@ -74,7 +159,14 @@
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/TRT_Haber_logosu_%282013-2020%29.png",
     "status": "working",
-    "response_time": 488.0
+    "response_time": 0
+  },
+  {
+    "name": "TRT Haber Yedek",
+    "url": "https://api.hitnova.net/s/trthaber/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
   },
   {
     "name": "NTV",
@@ -82,7 +174,14 @@
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b5/NTV_logo.png",
     "status": "working",
-    "response_time": 1015.68
+    "response_time": 0
+  },
+  {
+    "name": "NTV Yedek",
+    "url": "https://api.hitnova.net/s/ntv/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
   },
   {
     "name": "Habertürk",
@@ -90,14 +189,105 @@
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/7/78/Haberturk_logo.png",
     "status": "working",
-    "response_time": 723.23
+    "response_time": 0
+  },
+  {
+    "name": "Habertürk Yedek",
+    "url": "https://api.hitnova.net/s/haberturk/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
   },
   {
     "name": "Haber Global",
     "url": "https://tv.ensonhaber.com/haberglobal/haberglobal_720p.m3u8",
     "category": "Haber",
     "status": "working",
-    "response_time": 222.16
+    "response_time": 0
+  },
+  {
+    "name": "Haber Global Yedek",
+    "url": "https://api.hitnova.net/s/haberglobal/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "CNN Türk",
+    "url": "https://api.hitnova.net/s/cnnturk/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "A Haber",
+    "url": "https://api.hitnova.net/s/ahaber/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TGRT Haber",
+    "url": "https://api.hitnova.net/s/tgrthaber/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Ulke TV",
+    "url": "https://api.hitnova.net/s/ulketv/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Halk TV",
+    "url": "https://api.hitnova.net/s/halktv/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Tele1",
+    "url": "https://api.hitnova.net/s/tele1/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "KRT",
+    "url": "https://api.hitnova.net/s/krt/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Sözcü TV",
+    "url": "https://api.hitnova.net/s/sozcutv/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TV100",
+    "url": "https://api.hitnova.net/s/tv100/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "24 TV",
+    "url": "https://api.hitnova.net/s/24tv/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Bloomberg HT",
+    "url": "https://api.hitnova.net/s/bloomberght/mono.m3u8",
+    "category": "Haber",
+    "status": "working",
+    "response_time": 0
   },
   {
     "name": "TRT Spor",
@@ -105,14 +295,14 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c4/TRT_Spor_kurumsal_logo.png",
     "status": "working",
-    "response_time": 321.69
+    "response_time": 0
   },
   {
     "name": "TRT Spor Yıldız",
     "url": "https://api.hitnova.net/s/trtspor2/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 567.06
+    "response_time": 0
   },
   {
     "name": "A Spor",
@@ -120,7 +310,42 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/e/e9/A_Spor_logosu.png",
     "status": "working",
-    "response_time": 316.33
+    "response_time": 0
+  },
+  {
+    "name": "beIN Sports 1",
+    "url": "https://api.hitnova.net/s/bein1/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "beIN Sports 2",
+    "url": "https://api.hitnova.net/s/bein2/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "beIN Sports 3",
+    "url": "https://api.hitnova.net/s/bein3/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "beIN Sports 4",
+    "url": "https://api.hitnova.net/s/bein4/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "beIN Sports Haber",
+    "url": "https://api.hitnova.net/s/beinhaber/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 0
   },
   {
     "name": "S Sport",
@@ -128,14 +353,14 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/0/07/S_Sport_logo.png",
     "status": "working",
-    "response_time": 320.62
+    "response_time": 0
   },
   {
     "name": "S Sport 2",
     "url": "https://api.hitnova.net/s/ss2/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 524.18
+    "response_time": 0
   },
   {
     "name": "Smart Spor",
@@ -143,14 +368,14 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png",
     "status": "working",
-    "response_time": 314.02
+    "response_time": 0
   },
   {
     "name": "Smart Spor 2",
     "url": "https://api.hitnova.net/s/sms2/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 317.93
+    "response_time": 0
   },
   {
     "name": "Eurosport 1",
@@ -158,7 +383,7 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Eurosport_1_Logo_2015.png",
     "status": "working",
-    "response_time": 315.77
+    "response_time": 0
   },
   {
     "name": "Eurosport 2",
@@ -166,35 +391,35 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Eurosport_2_Logo_2015.png",
     "status": "working",
-    "response_time": 311.36
+    "response_time": 0
   },
   {
     "name": "Tivibu Spor 1",
     "url": "https://api.hitnova.net/s/t1/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 580.96
+    "response_time": 0
   },
   {
     "name": "Tivibu Spor 2",
     "url": "https://api.hitnova.net/s/t2/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 308.63
+    "response_time": 0
   },
   {
     "name": "Tivibu Spor 3",
     "url": "https://api.hitnova.net/s/t3/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 314.85
+    "response_time": 0
   },
   {
     "name": "Tivibu Spor 4",
     "url": "https://api.hitnova.net/s/t4/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 278.71
+    "response_time": 0
   },
   {
     "name": "CBC Sport",
@@ -202,6 +427,324 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/az/0/04/CBC_Sport_TV_loqo.png",
     "status": "working",
-    "response_time": 273.05
+    "response_time": 0
+  },
+  {
+    "name": "Idman TV",
+    "url": "https://andro.326503.xyz/checklist/androstreamliveidm.m3u8",
+    "category": "Spor",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/01/%C4%B0dman_TV_logo.png",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "NBA TV",
+    "url": "https://api.hitnova.net/s/nbatv/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "GS TV",
+    "url": "https://api.hitnova.net/s/gstv/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "FB TV",
+    "url": "https://api.hitnova.net/s/fbtv/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "BJK TV",
+    "url": "https://api.hitnova.net/s/bjktv/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT Çocuk",
+    "url": "https://tv-trtcocuk.medya.trt.com.tr/master_1080.m3u8",
+    "category": "Çocuk",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/23/TRT_%C3%A7ocuk_logo.png",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT Çocuk Yedek",
+    "url": "https://api.hitnova.net/s/trtcocuk/mono.m3u8",
+    "category": "Çocuk",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Cartoon Network",
+    "url": "https://api.hitnova.net/s/cn/mono.m3u8",
+    "category": "Çocuk",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Minika Çocuk",
+    "url": "https://api.hitnova.net/s/minikac/mono.m3u8",
+    "category": "Çocuk",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Minika Go",
+    "url": "https://api.hitnova.net/s/minikago/mono.m3u8",
+    "category": "Çocuk",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Disney Channel",
+    "url": "https://api.hitnova.net/s/disney/mono.m3u8",
+    "category": "Çocuk",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Nickelodeon",
+    "url": "https://api.hitnova.net/s/nick/mono.m3u8",
+    "category": "Çocuk",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Baby TV",
+    "url": "https://api.hitnova.net/s/babytv/mono.m3u8",
+    "category": "Çocuk",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT Belgesel",
+    "url": "https://tv-trtbelgesel.medya.trt.com.tr/master.m3u8",
+    "category": "Belgesel",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/ba/TRT_Belgesel_kurumsal_logo_%282015-2019%29.png",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT Belgesel Yedek",
+    "url": "https://api.hitnova.net/s/trtbelgesel/mono.m3u8",
+    "category": "Belgesel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "National Geographic",
+    "url": "https://api.hitnova.net/s/natgeo/mono.m3u8",
+    "category": "Belgesel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Nat Geo Wild",
+    "url": "https://api.hitnova.net/s/natgeowild/mono.m3u8",
+    "category": "Belgesel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Discovery Channel",
+    "url": "https://api.hitnova.net/s/discovery/mono.m3u8",
+    "category": "Belgesel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "History Channel",
+    "url": "https://api.hitnova.net/s/history/mono.m3u8",
+    "category": "Belgesel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Animal Planet",
+    "url": "https://api.hitnova.net/s/animalplanet/mono.m3u8",
+    "category": "Belgesel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "BBC Earth",
+    "url": "https://api.hitnova.net/s/bbcearth/mono.m3u8",
+    "category": "Belgesel",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT Müzik",
+    "url": "https://api.hitnova.net/s/trtmuzik/mono.m3u8",
+    "category": "Müzik",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Kral TV",
+    "url": "https://api.hitnova.net/s/kraltv/mono.m3u8",
+    "category": "Müzik",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Kral Pop",
+    "url": "https://api.hitnova.net/s/kralpop/mono.m3u8",
+    "category": "Müzik",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Kral FM TV",
+    "url": "https://api.hitnova.net/s/kralfm/mono.m3u8",
+    "category": "Müzik",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Power Türk",
+    "url": "https://api.hitnova.net/s/powerturk/mono.m3u8",
+    "category": "Müzik",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "MTV Türkiye",
+    "url": "https://api.hitnova.net/s/mtv/mono.m3u8",
+    "category": "Müzik",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Number1 TV",
+    "url": "https://api.hitnova.net/s/number1/mono.m3u8",
+    "category": "Müzik",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Number1 Türk",
+    "url": "https://api.hitnova.net/s/number1turk/mono.m3u8",
+    "category": "Müzik",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Dream TV",
+    "url": "https://api.hitnova.net/s/dreamtv/mono.m3u8",
+    "category": "Müzik",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Sinema TV",
+    "url": "https://api.hitnova.net/s/sinematv/mono.m3u8",
+    "category": "Sinema",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Sinema TV 1001",
+    "url": "https://api.hitnova.net/s/sinematv1001/mono.m3u8",
+    "category": "Sinema",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "FX",
+    "url": "https://api.hitnova.net/s/fx/mono.m3u8",
+    "category": "Sinema",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "MovieSmart",
+    "url": "https://api.hitnova.net/s/moviesmart/mono.m3u8",
+    "category": "Sinema",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "MovieSmart Premium",
+    "url": "https://api.hitnova.net/s/moviesmartpremium/mono.m3u8",
+    "category": "Sinema",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "MovieSmart Action",
+    "url": "https://api.hitnova.net/s/moviesmartaction/mono.m3u8",
+    "category": "Sinema",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "MovieSmart Family",
+    "url": "https://api.hitnova.net/s/moviesmartfamily/mono.m3u8",
+    "category": "Sinema",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Diyanet TV",
+    "url": "https://api.hitnova.net/s/diyanettv/mono.m3u8",
+    "category": "Dini",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Semerkand TV",
+    "url": "https://api.hitnova.net/s/semerkand/mono.m3u8",
+    "category": "Dini",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "Hicaz TV",
+    "url": "https://api.hitnova.net/s/hicaztv/mono.m3u8",
+    "category": "Dini",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT World",
+    "url": "https://api.hitnova.net/s/trtworld/mono.m3u8",
+    "category": "TRT",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT Avaz",
+    "url": "https://api.hitnova.net/s/trtavaz/mono.m3u8",
+    "category": "TRT",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT Kurdî",
+    "url": "https://api.hitnova.net/s/trtkurdi/mono.m3u8",
+    "category": "TRT",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT Arabi",
+    "url": "https://api.hitnova.net/s/trtarabi/mono.m3u8",
+    "category": "TRT",
+    "status": "working",
+    "response_time": 0
+  },
+  {
+    "name": "TRT Türk",
+    "url": "https://api.hitnova.net/s/trtturk/mono.m3u8",
+    "category": "TRT",
+    "status": "working",
+    "response_time": 0
   }
 ]

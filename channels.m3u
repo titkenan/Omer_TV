@@ -1,6 +1,7 @@
 #EXTM3U
-# OmEr TV - Son Güncelleme: 2026-03-25 17:10 UTC
-# Toplam: 27 kanal
+# OmEr TV - Son Güncelleme: 2026-03-25 17:17 UTC
+# Toplam: 104 kanal
+# GitHub: https://github.com/titkenan/Omer_TV
 
 #EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png",ATV
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
@@ -8,20 +9,53 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
 #EXTINF:-1 group-title="Genel",ATV Yedek
 https://api.hitnova.net/s/atv/mono.m3u8
 
+#EXTINF:-1 group-title="Genel",Beyaz TV
+https://api.hitnova.net/s/beyaztv/mono.m3u8
+
+#EXTINF:-1 group-title="Genel",Flash TV
+https://api.hitnova.net/s/flashtv/mono.m3u8
+
+#EXTINF:-1 group-title="Genel",Fox TV
+https://api.hitnova.net/s/fox/mono.m3u8
+
 #EXTINF:-1 group-title="Genel" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/ce/Kanal_7_logosu.png",Kanal 7
 https://yurhnwtpys.turknet.ercdn.net/cvmbjbpmdx/kanal7/kanal7_1080p.m3u8
 
 #EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/a/a4/Kanal_D_logo.png",Kanal D
 https://ackaxsqacw.turknet.ercdn.net/ozfkfbbjba/kanald/kanald_1080p.m3u8
 
+#EXTINF:-1 group-title="Genel",Now TV
+https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv_720p.m3u8
+
+#EXTINF:-1 group-title="Genel",Now TV Yedek 1
+https://api.hitnova.net/s/nowtv/mono.m3u8
+
+#EXTINF:-1 group-title="Genel",Now TV Yedek 2
+https://live.nowtvde.com/hls/live.m3u8
+
+#EXTINF:-1 group-title="Genel",Show Max
+https://api.hitnova.net/s/showmax/mono.m3u8
+
 #EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/f1/Logo_of_Show_TV.png",Show TV
 https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv.m3u8
+
+#EXTINF:-1 group-title="Genel",Show Türk
+https://api.hitnova.net/s/showturk/mono.m3u8
 
 #EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/9/92/Star_TV_.png",Star TV
 https://dygvideo.dygdigital.com/live/hls/startv4puhu
 
+#EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6c/TRT_1_logo_%282012-2021%29.png",TRT 1
+https://tv-trt1.medya.trt.com.tr/master.m3u8
+
 #EXTINF:-1 group-title="Genel",TRT 1 Yedek
 https://api.hitnova.net/s/trt1/mono.m3u8
+
+#EXTINF:-1 group-title="Genel",TRT 2
+https://tv-trt2.medya.trt.com.tr/master_1440.m3u8
+
+#EXTINF:-1 group-title="Genel",TV360
+https://api.hitnova.net/s/tv360/mono.m3u8
 
 #EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png",TV8
 https://api.hitnova.net/s/tv8/mono.m3u8
@@ -29,20 +63,71 @@ https://api.hitnova.net/s/tv8/mono.m3u8
 #EXTINF:-1 group-title="Genel",TV8.5
 https://api.hitnova.net/s/tv85/mono.m3u8
 
+#EXTINF:-1 group-title="Genel",Teve2
+https://api.hitnova.net/s/teve2/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",24 TV
+https://api.hitnova.net/s/24tv/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",A Haber
+https://api.hitnova.net/s/ahaber/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",Bloomberg HT
+https://api.hitnova.net/s/bloomberght/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",CNN Türk
+https://api.hitnova.net/s/cnnturk/mono.m3u8
+
 #EXTINF:-1 group-title="Haber",Haber Global
 https://tv.ensonhaber.com/haberglobal/haberglobal_720p.m3u8
+
+#EXTINF:-1 group-title="Haber",Haber Global Yedek
+https://api.hitnova.net/s/haberglobal/mono.m3u8
 
 #EXTINF:-1 group-title="Haber" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Haberturk_logo.png",Habertürk
 https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3u8
 
+#EXTINF:-1 group-title="Haber",Habertürk Yedek
+https://api.hitnova.net/s/haberturk/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",Halk TV
+https://api.hitnova.net/s/halktv/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",KRT
+https://api.hitnova.net/s/krt/mono.m3u8
+
 #EXTINF:-1 group-title="Haber" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/b5/NTV_logo.png",NTV
 https://dogus.daioncdn.net/ntv/ntv_1080p.m3u8
+
+#EXTINF:-1 group-title="Haber",NTV Yedek
+https://api.hitnova.net/s/ntv/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",Sözcü TV
+https://api.hitnova.net/s/sozcutv/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",TGRT Haber
+https://api.hitnova.net/s/tgrthaber/mono.m3u8
 
 #EXTINF:-1 group-title="Haber" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6b/TRT_Haber_logosu_%282013-2020%29.png",TRT Haber
 https://tv-trthaber.medya.trt.com.tr/master.m3u8
 
+#EXTINF:-1 group-title="Haber",TRT Haber Yedek
+https://api.hitnova.net/s/trthaber/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",TV100
+https://api.hitnova.net/s/tv100/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",Tele1
+https://api.hitnova.net/s/tele1/mono.m3u8
+
+#EXTINF:-1 group-title="Haber",Ulke TV
+https://api.hitnova.net/s/ulketv/mono.m3u8
+
 #EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/e/e9/A_Spor_logosu.png",A Spor
 https://api.hitnova.net/s/as/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",BJK TV
+https://api.hitnova.net/s/bjktv/mono.m3u8
 
 #EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/az/0/04/CBC_Sport_TV_loqo.png",CBC Sport
 https://andro.2385437.xyz/checklist/androstreamlivecbcs.m3u8
@@ -52,6 +137,18 @@ https://api.hitnova.net/s/eu1/mono.m3u8
 
 #EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d0/Eurosport_2_Logo_2015.png",Eurosport 2
 https://api.hitnova.net/s/eu2/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",FB TV
+https://api.hitnova.net/s/fbtv/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",GS TV
+https://api.hitnova.net/s/gstv/mono.m3u8
+
+#EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/01/%C4%B0dman_TV_logo.png",Idman TV
+https://andro.326503.xyz/checklist/androstreamliveidm.m3u8
+
+#EXTINF:-1 group-title="Spor",NBA TV
+https://api.hitnova.net/s/nbatv/mono.m3u8
 
 #EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/07/S_Sport_logo.png",S Sport
 https://api.hitnova.net/s/ss/mono.m3u8
@@ -82,4 +179,139 @@ https://api.hitnova.net/s/t3/mono.m3u8
 
 #EXTINF:-1 group-title="Spor",Tivibu Spor 4
 https://api.hitnova.net/s/t4/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",beIN Sports 1
+https://api.hitnova.net/s/bein1/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",beIN Sports 2
+https://api.hitnova.net/s/bein2/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",beIN Sports 3
+https://api.hitnova.net/s/bein3/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",beIN Sports 4
+https://api.hitnova.net/s/bein4/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",beIN Sports Haber
+https://api.hitnova.net/s/beinhaber/mono.m3u8
+
+#EXTINF:-1 group-title="Çocuk",Baby TV
+https://api.hitnova.net/s/babytv/mono.m3u8
+
+#EXTINF:-1 group-title="Çocuk",Cartoon Network
+https://api.hitnova.net/s/cn/mono.m3u8
+
+#EXTINF:-1 group-title="Çocuk",Disney Channel
+https://api.hitnova.net/s/disney/mono.m3u8
+
+#EXTINF:-1 group-title="Çocuk",Minika Go
+https://api.hitnova.net/s/minikago/mono.m3u8
+
+#EXTINF:-1 group-title="Çocuk",Minika Çocuk
+https://api.hitnova.net/s/minikac/mono.m3u8
+
+#EXTINF:-1 group-title="Çocuk",Nickelodeon
+https://api.hitnova.net/s/nick/mono.m3u8
+
+#EXTINF:-1 group-title="Çocuk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/23/TRT_%C3%A7ocuk_logo.png",TRT Çocuk
+https://tv-trtcocuk.medya.trt.com.tr/master_1080.m3u8
+
+#EXTINF:-1 group-title="Çocuk",TRT Çocuk Yedek
+https://api.hitnova.net/s/trtcocuk/mono.m3u8
+
+#EXTINF:-1 group-title="Belgesel",Animal Planet
+https://api.hitnova.net/s/animalplanet/mono.m3u8
+
+#EXTINF:-1 group-title="Belgesel",BBC Earth
+https://api.hitnova.net/s/bbcearth/mono.m3u8
+
+#EXTINF:-1 group-title="Belgesel",Discovery Channel
+https://api.hitnova.net/s/discovery/mono.m3u8
+
+#EXTINF:-1 group-title="Belgesel",History Channel
+https://api.hitnova.net/s/history/mono.m3u8
+
+#EXTINF:-1 group-title="Belgesel",Nat Geo Wild
+https://api.hitnova.net/s/natgeowild/mono.m3u8
+
+#EXTINF:-1 group-title="Belgesel",National Geographic
+https://api.hitnova.net/s/natgeo/mono.m3u8
+
+#EXTINF:-1 group-title="Belgesel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/b/ba/TRT_Belgesel_kurumsal_logo_%282015-2019%29.png",TRT Belgesel
+https://tv-trtbelgesel.medya.trt.com.tr/master.m3u8
+
+#EXTINF:-1 group-title="Belgesel",TRT Belgesel Yedek
+https://api.hitnova.net/s/trtbelgesel/mono.m3u8
+
+#EXTINF:-1 group-title="Müzik",Dream TV
+https://api.hitnova.net/s/dreamtv/mono.m3u8
+
+#EXTINF:-1 group-title="Müzik",Kral FM TV
+https://api.hitnova.net/s/kralfm/mono.m3u8
+
+#EXTINF:-1 group-title="Müzik",Kral Pop
+https://api.hitnova.net/s/kralpop/mono.m3u8
+
+#EXTINF:-1 group-title="Müzik",Kral TV
+https://api.hitnova.net/s/kraltv/mono.m3u8
+
+#EXTINF:-1 group-title="Müzik",MTV Türkiye
+https://api.hitnova.net/s/mtv/mono.m3u8
+
+#EXTINF:-1 group-title="Müzik",Number1 TV
+https://api.hitnova.net/s/number1/mono.m3u8
+
+#EXTINF:-1 group-title="Müzik",Number1 Türk
+https://api.hitnova.net/s/number1turk/mono.m3u8
+
+#EXTINF:-1 group-title="Müzik",Power Türk
+https://api.hitnova.net/s/powerturk/mono.m3u8
+
+#EXTINF:-1 group-title="Müzik",TRT Müzik
+https://api.hitnova.net/s/trtmuzik/mono.m3u8
+
+#EXTINF:-1 group-title="Sinema",FX
+https://api.hitnova.net/s/fx/mono.m3u8
+
+#EXTINF:-1 group-title="Sinema",MovieSmart
+https://api.hitnova.net/s/moviesmart/mono.m3u8
+
+#EXTINF:-1 group-title="Sinema",MovieSmart Action
+https://api.hitnova.net/s/moviesmartaction/mono.m3u8
+
+#EXTINF:-1 group-title="Sinema",MovieSmart Family
+https://api.hitnova.net/s/moviesmartfamily/mono.m3u8
+
+#EXTINF:-1 group-title="Sinema",MovieSmart Premium
+https://api.hitnova.net/s/moviesmartpremium/mono.m3u8
+
+#EXTINF:-1 group-title="Sinema",Sinema TV
+https://api.hitnova.net/s/sinematv/mono.m3u8
+
+#EXTINF:-1 group-title="Sinema",Sinema TV 1001
+https://api.hitnova.net/s/sinematv1001/mono.m3u8
+
+#EXTINF:-1 group-title="Dini",Diyanet TV
+https://api.hitnova.net/s/diyanettv/mono.m3u8
+
+#EXTINF:-1 group-title="Dini",Hicaz TV
+https://api.hitnova.net/s/hicaztv/mono.m3u8
+
+#EXTINF:-1 group-title="Dini",Semerkand TV
+https://api.hitnova.net/s/semerkand/mono.m3u8
+
+#EXTINF:-1 group-title="TRT",TRT Arabi
+https://api.hitnova.net/s/trtarabi/mono.m3u8
+
+#EXTINF:-1 group-title="TRT",TRT Avaz
+https://api.hitnova.net/s/trtavaz/mono.m3u8
+
+#EXTINF:-1 group-title="TRT",TRT Kurdî
+https://api.hitnova.net/s/trtkurdi/mono.m3u8
+
+#EXTINF:-1 group-title="TRT",TRT Türk
+https://api.hitnova.net/s/trtturk/mono.m3u8
+
+#EXTINF:-1 group-title="TRT",TRT World
+https://api.hitnova.net/s/trtworld/mono.m3u8
 
