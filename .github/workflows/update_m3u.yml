@@ -1,0 +1,56 @@
+name: 🔄 Auto Update M3U
+
+on:
+  schedule:
+    # Her 6 saatte bir çalışır (00:00, 06:00, 12:00, 18:00 UTC)
+    - cron: '0 */6 * * *'
+  
+  # Manuel tetikleme için
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v3
+      
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: 📦 Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: 🌐 Scrape Channels
+        run: |
+          python scripts/scraper.py
+      
+      - name: 🧪 Test Streams
+        run: |
+          python scripts/tester.py
+      
+      - name: 📝 Generate M3U
+        run: |
+          python scripts/generator.py
+      
+      - name: 📊 Generate Stats
+        run: |
+          python scripts/stats.py
+      
+      - name: 💾 Commit Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 Auto update $(date +'%Y-%m-%d %H:%M:%S')"
+      
+      - name: 🚀 Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
