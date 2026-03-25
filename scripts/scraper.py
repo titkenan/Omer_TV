@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import json
 import os
 
@@ -14,7 +15,7 @@ def scrape_channels():
         {'name': 'Kanal D', 'url': 'https://ackaxsqacw.turknet.ercdn.net/ozfkfbbjba/kanald/kanald_1080p.m3u8', 'category': 'Genel', 'logo': 'https://upload.wikimedia.org/wikipedia/tr/a/a4/Kanal_D_logo.png'},
         {'name': 'Show TV', 'url': 'https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv.m3u8', 'category': 'Genel', 'logo': 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Logo_of_Show_TV.png'},
         {'name': 'Star TV', 'url': 'https://dygvideo.dygdigital.com/live/hls/startv4puhu', 'category': 'Genel', 'logo': 'https://upload.wikimedia.org/wikipedia/tr/9/92/Star_TV_.png'},
-        {'name': 'Kanal 7', 'url': 'https://yurhnwtpys.turknet.ercdn.net/cvmbjbpmdx/kanal7/kanal7_1080p.m3u8', 'category': 'Genel', 'logo': 'https://static.wikia.nocookie.net/logopedia/images/c/ce/Kanal_7_logosu.png'},
+        {'name': 'Kanal 7', 'url': 'https://yurhnwtpys.turknet.ercdn.net/cvmbjbpmdx/kanal7/kanal7_1080p.m3u8', 'category': 'Genel'},
         {'name': 'TV8', 'url': 'https://api.hitnova.net/s/tv8/mono.m3u8', 'category': 'Genel', 'logo': 'https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png'},
         {'name': 'NTV', 'url': 'https://dogus.daioncdn.net/ntv/ntv_1080p.m3u8', 'category': 'Haber', 'logo': 'https://upload.wikimedia.org/wikipedia/commons/b/b5/NTV_logo.png'},
         {'name': 'Habertürk', 'url': 'https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3u8', 'category': 'Haber', 'logo': 'https://upload.wikimedia.org/wikipedia/commons/7/78/Haberturk_logo.png'},
@@ -22,12 +23,17 @@ def scrape_channels():
         {'name': 'A Spor', 'url': 'https://api.hitnova.net/s/as/mono.m3u8', 'category': 'Spor', 'logo': 'https://upload.wikimedia.org/wikipedia/tr/e/e9/A_Spor_logosu.png'},
     ]
     
+    # data klasörünü oluştur
     os.makedirs('data', exist_ok=True)
     
-    with open('data/scraped_channels.json', 'w', encoding='utf-8') as f:
+    # JSON'a kaydet
+    output_file = 'data/scraped_channels.json'
+    with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(channels, f, indent=2, ensure_ascii=False)
     
-    print(f"✅ {len(channels)} kanal kaydedildi")
+    print(f"✅ {len(channels)} kanal kaydedildi: {output_file}")
+    print(f"📄 Dosya boyutu: {os.path.getsize(output_file)} byte")
+    
     return channels
 
 
