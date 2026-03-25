@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmEr TV - Türkiye IPTV</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9em;
+        }
+        .m3u-link {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .m3u-link input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.9);
+            color: #333;
+        }
+        .copy-btn {
+            margin-top: 10px;
+            padding: 12px 30px;
+            background: #667eea;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .copy-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .how-to {
+            background: rgba(255,255,255,0.05);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .how-to h3 {
+            margin-bottom: 10px;
+        }
+        .how-to ol {
+            margin-left: 20px;
+        }
+        .how-to li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📺 OmEr TV</h1>
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+            <span class="badge">🔄 Otomatik Güncelleme</span>
+            <span class="badge">✅ Test Edilmiş</span>
+            <span class="badge">🇹🇷 Türkiye</span>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="total-channels">-</div>
+                <div class="stat-label">Toplam Kanal</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="last-update">-</div>
+                <div class="stat-label">Saat Önce Güncellendi</div>
+            </div>
+        </div>
+
+        <div class="m3u-link">
+            <h3 style="margin-bottom: 15px;">📡 M3U Playlist Linki</h3>
+            <input type="text" id="m3u-url" value="https://raw.githubusercontent.com/titkenan/Omer_TV/main/channels.m3u" readonly>
+            <button class="copy-btn" onclick="copyLink()">📋 Kopyala</button>
+        </div>
+
+        <div class="how-to">
+            <h3>🚀 Nasıl Kullanılır?</h3>
+            <ol>
+                <li>Yukarıdaki linki kopyala</li>
+                <li>VLC Player, IPTV veya TiviMate gibi bir uygulama aç</li>
+                <li>Network Stream / M3U URL bölümüne yapıştır</li>
+                <li>Kanalları izlemeye başla! 🎉</li>
+            </ol>
+        </div>
+
+        <div class="how-to">
+            <h3>📱 Önerilen Uygulamalar</h3>
+            <ul style="list-style: none; margin-left: 0;">
+                <li>🖥️ <strong>PC:</strong> VLC Media Player</li>
+                <li>📱 <strong>Android:</strong> IPTV, TiviMate</li>
+                <li>🍎 <strong>iOS:</strong> GSE Smart IPTV</li>
+                <li>📺 <strong>Smart TV:</strong> Smart IPTV</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; opacity: 0.7;">
+            <p>🔄 Her 6 saatte bir otomatik güncellenir</p>
+            <p style="margin-top: 10px;">
+                <a href="https://github.com/titkenan/Omer_TV" style="color: #ffd700;">⭐ GitHub'da Yıldızla</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function copyLink() {
+            const input = document.getElementById('m3u-url');
+            input.select();
+            document.execCommand('copy');
+            
+            const btn = document.querySelector('.copy-btn');
+            btn.textContent = '✅ Kopyalandı!';
+            setTimeout(() => {
+                btn.textContent = '📋 Kopyala';
+            }, 2000);
+        }
+
+        // İstatistikleri yükle
+        fetch('stats.json')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('total-channels').textContent = data.total_channels;
+                
+                const lastUpdate = new Date(data.last_update);
+                const hoursAgo = Math.floor((Date.now() - lastUpdate) / 3600000);
+                document.getElementById('last-update').textContent = hoursAgo;
+            })
+            .catch(() => {
+                document.getElementById('total-channels').textContent = '15+';
+                document.getElementById('last-update').textContent = '< 6';
+            });
+    </script>
+</body>
+</html>
