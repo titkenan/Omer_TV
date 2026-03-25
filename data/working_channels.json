@@ -5,7 +5,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6c/TRT_1_logo_%282012-2021%29.png",
     "status": "working",
-    "response_time": 991.66
+    "response_time": 664.66
   },
   {
     "name": "TRT Haber",
@@ -13,7 +13,7 @@
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/TRT_Haber_logosu_%282013-2020%29.png",
     "status": "working",
-    "response_time": 1352.94
+    "response_time": 758.9
   },
   {
     "name": "TRT Spor",
@@ -21,7 +21,7 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c4/TRT_Spor_kurumsal_logo.png",
     "status": "working",
-    "response_time": 919.47
+    "response_time": 629.12
   },
   {
     "name": "TRT Çocuk",
@@ -29,15 +29,7 @@
     "category": "Çocuk",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/2/23/TRT_%C3%A7ocuk_logo.png",
     "status": "working",
-    "response_time": 668.48
-  },
-  {
-    "name": "ATV",
-    "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8",
-    "category": "Genel",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png",
-    "status": "working",
-    "response_time": 1964.36
+    "response_time": 631.08
   },
   {
     "name": "Kanal D",
@@ -45,7 +37,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/a/a4/Kanal_D_logo.png",
     "status": "working",
-    "response_time": 7401.59
+    "response_time": 840.63
   },
   {
     "name": "Show TV",
@@ -53,7 +45,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Logo_of_Show_TV.png",
     "status": "working",
-    "response_time": 1038.31
+    "response_time": 1018.95
   },
   {
     "name": "Star TV",
@@ -61,15 +53,14 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/9/92/Star_TV_.png",
     "status": "working",
-    "response_time": 1635.08
+    "response_time": 955.73
   },
   {
     "name": "Kanal 7",
     "url": "https://yurhnwtpys.turknet.ercdn.net/cvmbjbpmdx/kanal7/kanal7_1080p.m3u8",
     "category": "Genel",
-    "logo": "https://static.wikia.nocookie.net/logopedia/images/c/ce/Kanal_7_logosu.png",
     "status": "working",
-    "response_time": 1004.58
+    "response_time": 1376.31
   },
   {
     "name": "TV8",
@@ -77,7 +68,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png",
     "status": "working",
-    "response_time": 712.91
+    "response_time": 620.53
   },
   {
     "name": "NTV",
@@ -85,7 +76,7 @@
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b5/NTV_logo.png",
     "status": "working",
-    "response_time": 1073.02
+    "response_time": 767.65
   },
   {
     "name": "Habertürk",
@@ -93,21 +84,13 @@
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/7/78/Haberturk_logo.png",
     "status": "working",
-    "response_time": 1119.05
+    "response_time": 1704.12
   },
   {
     "name": "Haber Global",
     "url": "https://tv.ensonhaber.com/haberglobal/haberglobal_720p.m3u8",
     "category": "Haber",
     "status": "working",
-    "response_time": 673.2
-  },
-  {
-    "name": "A Spor",
-    "url": "https://api.hitnova.net/s/as/mono.m3u8",
-    "category": "Spor",
-    "logo": "https://upload.wikimedia.org/wikipedia/tr/e/e9/A_Spor_logosu.png",
-    "status": "working",
-    "response_time": 385.02
+    "response_time": 360.59
   }
 ]

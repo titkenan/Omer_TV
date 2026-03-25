@@ -1,11 +1,8 @@
 #EXTM3U
-# OmEr TV - Son Güncelleme: 2026-03-25 16:39
-# Toplam: 14 kanal
+# OmEr TV - Son Güncelleme: 2026-03-25 16:46 UTC
+# Toplam: 12 kanal
 
-#EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png",ATV
-https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
-
-#EXTINF:-1 group-title="Genel" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/ce/Kanal_7_logosu.png",Kanal 7
+#EXTINF:-1 group-title="Genel",Kanal 7
 https://yurhnwtpys.turknet.ercdn.net/cvmbjbpmdx/kanal7/kanal7_1080p.m3u8
 
 #EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/a/a4/Kanal_D_logo.png",Kanal D
@@ -34,9 +31,6 @@ https://dogus.daioncdn.net/ntv/ntv_1080p.m3u8
 
 #EXTINF:-1 group-title="Haber" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6b/TRT_Haber_logosu_%282013-2020%29.png",TRT Haber
 https://tv-trthaber.medya.trt.com.tr/master.m3u8
-
-#EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/e/e9/A_Spor_logosu.png",A Spor
-https://api.hitnova.net/s/as/mono.m3u8
 
 #EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c4/TRT_Spor_kurumsal_logo.png",TRT Spor
 https://api.hitnova.net/s/trtspor/mono.m3u8

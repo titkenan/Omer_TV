@@ -1,11 +1,11 @@
 {
-  "total_channels": 14,
-  "last_update": "2026-03-25T16:39:50.386383",
+  "total_channels": 12,
+  "last_update": "2026-03-25T16:46:22.153357",
   "categories": {
-    "Genel": 7,
+    "Genel": 6,
     "Haber": 4,
-    "Spor": 2,
+    "Spor": 1,
     "Çocuk": 1
   },
-  "average_response_time": 1495.69
+  "average_response_time": 860.69
 }
