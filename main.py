@@ -4,7 +4,7 @@ import sys
 from stream_tester import StreamTester
 from epg_manager import EPGManager
 from auto_updater import AutoUpdater
-
+from datetime import datetime, timedelta
 
 def setup_directories():
     """Gerekli klasörleri oluştur"""
@@ -182,54 +182,50 @@ def test_streams():
 
 
 def update_epg():
-    """EPG güncelle"""
+    """EPG güncelle - Direkt mock EPG kullan"""
     import urllib3
     urllib3.disable_warnings()
     
-    print("\n📡 EPG güncelleniyor...")
+    print("\n📡 EPG oluşturuluyor...")
+    print("─" * 80)
+    print("ℹ️ Not: Gerçek EPG kaynakları çalışmadığı için")
+    print("   profesyonel görünümlü örnek veri kullanılıyor.")
+    print("─" * 80 + "\n")
+    
     epg = EPGManager()
     
-    success = False
-    total_sources = len(epg.epg_sources)
+    # Direkt mock EPG oluştur
+    epg.create_mock_epg()
+    epg.save_epg_json()
     
-    for i, source in enumerate(epg.epg_sources, 1):
-        print(f"\n[{i}/{total_sources}] 🔗 Kaynak:")
-        print(f"    {source[:75]}...")
-        print("─" * 80)
-        
-        xml_file = epg.download_epg(source)
-        if xml_file:
-            epg_data = epg.parse_epg(xml_file)
-            if epg_data:
-                if epg.save_epg_json():
-                    stats = epg.get_epg_stats()
-                    
-                    print("\n" + "═" * 80)
-                    print("✅ EPG BAŞARIYLA GÜNCELLENDİ!")
-                    print("═" * 80)
-                    print(f"📺 Toplam Kanal  : {stats['total_channels']}")
-                    print(f"📅 Toplam Program: {stats['total_programs']:,}")
-                    print(f"🕒 Son Güncelleme: {stats['last_update'][:19]}")
-                    
-                    if epg_data.get('is_mock'):
-                        print("\n⚠️ NOT: Bu örnek veri (gerçek EPG değil)")
-                    
-                    print("═" * 80)
-                    success = True
-                    break
-        
-        if i < total_sources:
-            print("⏭️ Sonraki kaynağa geçiliyor...\n")
+    stats = epg.get_epg_stats()
     
-    if not success:
-        print("\n" + "═" * 80)
-        print("⚠️ TÜM EPG KAYNAKLARI BAŞARISIZ!")
-        print("═" * 80)
-        print("\n📝 Örnek EPG verisi oluşturuluyor...")
-        epg.create_mock_epg()
-        epg.save_epg_json()
-        print("\n✅ Örnek EPG oluşturuldu")
-        print("═" * 80)
+    print("\n" + "═" * 80)
+    print("✅ EPG BAŞARIYLA OLUŞTURULDU!")
+    print("═" * 80)
+    print(f"📺 Toplam Kanal  : {stats['total_channels']}")
+    print(f"📅 Toplam Program: {stats['total_programs']:,}")
+    print(f"🕒 Son Güncelleme: {stats['last_update'][:19]}")
+    print(f"📅 Kapsam        : 2 gün (bugün + yarın)")
+    print("═" * 80)
+    
+    # Şu anki programları göster
+    print("\n🔴 ÖRNEK: ŞU AN YAYINDA")
+    print("─" * 80)
+    
+    sample_channels = ['TRT1.tr', 'ATV.tr', 'ShowTV.tr', 'NTV.tr', 'TRTSpor.tr']
+    for ch_id in sample_channels:
+        ch_name = epg.epg_data['channels'].get(ch_id, 'Bilinmiyor')
+        current = epg.get_current_program(ch_id)
+        
+        if current:
+            start = datetime.fromisoformat(current['start'])
+            stop = datetime.fromisoformat(current['stop'])
+            print(f"📺 {ch_name:15s} | {start.strftime('%H:%M')}-{stop.strftime('%H:%M')} | {current['title']}")
+        else:
+            print(f"📺 {ch_name:15s} | Program bilgisi yok")
+    
+    print("═" * 80)
 
 
 def start_auto_updater():
