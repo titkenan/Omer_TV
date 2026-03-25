@@ -1,8 +1,14 @@
 #EXTM3U
-# OmEr TV - Son Güncelleme: 2026-03-25 16:46 UTC
-# Toplam: 12 kanal
+# OmEr TV - Son Güncelleme: 2026-03-25 17:00 UTC
+# Toplam: 26 kanal
 
-#EXTINF:-1 group-title="Genel",Kanal 7
+#EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png",ATV
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
+
+#EXTINF:-1 group-title="Genel",ATV (Yedek)
+https://api.hitnova.net/s/atv/mono.m3u8
+
+#EXTINF:-1 group-title="Genel" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/ce/Kanal_7_logosu.png",Kanal 7
 https://yurhnwtpys.turknet.ercdn.net/cvmbjbpmdx/kanal7/kanal7_1080p.m3u8
 
 #EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/a/a4/Kanal_D_logo.png",Kanal D
@@ -14,11 +20,11 @@ https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv.m3u8
 #EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/9/92/Star_TV_.png",Star TV
 https://dygvideo.dygdigital.com/live/hls/startv4puhu
 
-#EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6c/TRT_1_logo_%282012-2021%29.png",TRT 1
-https://tv-trt1.medya.trt.com.tr/master.m3u8
-
 #EXTINF:-1 group-title="Genel" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png",TV8
 https://api.hitnova.net/s/tv8/mono.m3u8
+
+#EXTINF:-1 group-title="Genel",TV8.5
+https://api.hitnova.net/s/tv85/mono.m3u8
 
 #EXTINF:-1 group-title="Haber",Haber Global
 https://tv.ensonhaber.com/haberglobal/haberglobal_720p.m3u8
@@ -32,9 +38,45 @@ https://dogus.daioncdn.net/ntv/ntv_1080p.m3u8
 #EXTINF:-1 group-title="Haber" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/6b/TRT_Haber_logosu_%282013-2020%29.png",TRT Haber
 https://tv-trthaber.medya.trt.com.tr/master.m3u8
 
+#EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/e/e9/A_Spor_logosu.png",A Spor
+https://api.hitnova.net/s/as/mono.m3u8
+
+#EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/az/0/04/CBC_Sport_TV_loqo.png",CBC Sport
+https://andro.2385437.xyz/checklist/androstreamlivecbcs.m3u8
+
+#EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/e6/Eurosport_1_Logo_2015.png",Eurosport 1
+https://api.hitnova.net/s/eu1/mono.m3u8
+
+#EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d0/Eurosport_2_Logo_2015.png",Eurosport 2
+https://api.hitnova.net/s/eu2/mono.m3u8
+
+#EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/07/S_Sport_logo.png",S Sport
+https://api.hitnova.net/s/ss/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",S Sport 2
+https://api.hitnova.net/s/ss2/mono.m3u8
+
+#EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png",Smart Spor
+https://api.hitnova.net/s/smarts/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",Smart Spor 2
+https://api.hitnova.net/s/sms2/mono.m3u8
+
 #EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c4/TRT_Spor_kurumsal_logo.png",TRT Spor
 https://api.hitnova.net/s/trtspor/mono.m3u8
 
-#EXTINF:-1 group-title="Çocuk" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/23/TRT_%C3%A7ocuk_logo.png",TRT Çocuk
-https://tv-trtcocuk.medya.trt.com.tr/master_1080.m3u8
+#EXTINF:-1 group-title="Spor",TRT Spor 2
+https://api.hitnova.net/s/trtspor2/mono.m3u8
+
+#EXTINF:-1 group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/d/db/TivibuSporLogo1.PNG",Tivibu Spor 1
+https://api.hitnova.net/s/t1/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",Tivibu Spor 2
+https://api.hitnova.net/s/t2/mono.m3u8
+
+#EXTINF:-1 group-title="Spor",Tivibu Spor 3
+https://api.hitnova.net/s/t3/mono.m3u8
+
+#EXTINF:-1 group-title="TRT",TRT 1 (Yedek)
+https://api.hitnova.net/s/trt1/mono.m3u8
 
