@@ -6,6 +6,11 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6c/TRT_1_logo_%282012-2021%29.png"
   },
   {
+    "name": "TRT 1 Yedek",
+    "url": "https://api.hitnova.net/s/trt1/mono.m3u8",
+    "category": "Genel"
+  },
+  {
     "name": "TRT 2",
     "url": "https://tv-trt2.medya.trt.com.tr/master_1440.m3u8",
     "category": "Genel"
@@ -17,7 +22,7 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png"
   },
   {
-    "name": "ATV (Yedek)",
+    "name": "ATV Yedek",
     "url": "https://api.hitnova.net/s/atv/mono.m3u8",
     "category": "Genel"
   },
@@ -62,10 +67,19 @@
     "category": "Genel"
   },
   {
+    "name": "Now TV Yedek 1",
+    "url": "https://api.hitnova.net/s/nowtv/mono.m3u8",
+    "category": "Genel"
+  },
+  {
+    "name": "Now TV Yedek 2",
+    "url": "https://live.nowtvde.com/hls/live.m3u8",
+    "category": "Genel"
+  },
+  {
     "name": "Fox TV",
     "url": "https://api.hitnova.net/s/fox/mono.m3u8",
-    "category": "Genel",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c0/FOX_wordmark.svg"
+    "category": "Genel"
   },
   {
     "name": "TV360",
@@ -88,10 +102,25 @@
     "category": "Genel"
   },
   {
+    "name": "Show Max",
+    "url": "https://api.hitnova.net/s/showmax/mono.m3u8",
+    "category": "Genel"
+  },
+  {
+    "name": "Show Türk",
+    "url": "https://api.hitnova.net/s/showturk/mono.m3u8",
+    "category": "Genel"
+  },
+  {
     "name": "TRT Haber",
     "url": "https://tv-trthaber.medya.trt.com.tr/master.m3u8",
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/TRT_Haber_logosu_%282013-2020%29.png"
+  },
+  {
+    "name": "TRT Haber Yedek",
+    "url": "https://api.hitnova.net/s/trthaber/mono.m3u8",
+    "category": "Haber"
   },
   {
     "name": "NTV",
@@ -100,14 +129,29 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b5/NTV_logo.png"
   },
   {
+    "name": "NTV Yedek",
+    "url": "https://api.hitnova.net/s/ntv/mono.m3u8",
+    "category": "Haber"
+  },
+  {
     "name": "Habertürk",
     "url": "https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3u8",
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/7/78/Haberturk_logo.png"
   },
   {
+    "name": "Habertürk Yedek",
+    "url": "https://api.hitnova.net/s/haberturk/mono.m3u8",
+    "category": "Haber"
+  },
+  {
     "name": "Haber Global",
     "url": "https://tv.ensonhaber.com/haberglobal/haberglobal_720p.m3u8",
+    "category": "Haber"
+  },
+  {
+    "name": "Haber Global Yedek",
+    "url": "https://api.hitnova.net/s/haberglobal/mono.m3u8",
     "category": "Haber"
   },
   {
@@ -161,13 +205,18 @@
     "category": "Haber"
   },
   {
+    "name": "Bloomberg HT",
+    "url": "https://api.hitnova.net/s/bloomberght/mono.m3u8",
+    "category": "Haber"
+  },
+  {
     "name": "TRT Spor",
     "url": "https://api.hitnova.net/s/trtspor/mono.m3u8",
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c4/TRT_Spor_kurumsal_logo.png"
   },
   {
-    "name": "TRT Spor 2",
+    "name": "TRT Spor Yıldız",
     "url": "https://api.hitnova.net/s/trtspor2/mono.m3u8",
     "category": "Spor"
   },
@@ -195,6 +244,11 @@
   {
     "name": "beIN Sports 4",
     "url": "https://api.hitnova.net/s/bein4/mono.m3u8",
+    "category": "Spor"
+  },
+  {
+    "name": "beIN Sports Haber",
+    "url": "https://api.hitnova.net/s/beinhaber/mono.m3u8",
     "category": "Spor"
   },
   {
@@ -234,8 +288,7 @@
   {
     "name": "Tivibu Spor 1",
     "url": "https://api.hitnova.net/s/t1/mono.m3u8",
-    "category": "Spor",
-    "logo": "https://upload.wikimedia.org/wikipedia/tr/d/db/TivibuSporLogo1.PNG"
+    "category": "Spor"
   },
   {
     "name": "Tivibu Spor 2",
@@ -245,6 +298,11 @@
   {
     "name": "Tivibu Spor 3",
     "url": "https://api.hitnova.net/s/t3/mono.m3u8",
+    "category": "Spor"
+  },
+  {
+    "name": "Tivibu Spor 4",
+    "url": "https://api.hitnova.net/s/t4/mono.m3u8",
     "category": "Spor"
   },
   {
@@ -265,10 +323,30 @@
     "category": "Spor"
   },
   {
+    "name": "GS TV",
+    "url": "https://api.hitnova.net/s/gstv/mono.m3u8",
+    "category": "Spor"
+  },
+  {
+    "name": "FB TV",
+    "url": "https://api.hitnova.net/s/fbtv/mono.m3u8",
+    "category": "Spor"
+  },
+  {
+    "name": "BJK TV",
+    "url": "https://api.hitnova.net/s/bjktv/mono.m3u8",
+    "category": "Spor"
+  },
+  {
     "name": "TRT Çocuk",
     "url": "https://tv-trtcocuk.medya.trt.com.tr/master_1080.m3u8",
     "category": "Çocuk",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/2/23/TRT_%C3%A7ocuk_logo.png"
+  },
+  {
+    "name": "TRT Çocuk Yedek",
+    "url": "https://api.hitnova.net/s/trtcocuk/mono.m3u8",
+    "category": "Çocuk"
   },
   {
     "name": "Cartoon Network",
@@ -291,14 +369,34 @@
     "category": "Çocuk"
   },
   {
+    "name": "Nickelodeon",
+    "url": "https://api.hitnova.net/s/nick/mono.m3u8",
+    "category": "Çocuk"
+  },
+  {
+    "name": "Baby TV",
+    "url": "https://api.hitnova.net/s/babytv/mono.m3u8",
+    "category": "Çocuk"
+  },
+  {
     "name": "TRT Belgesel",
-    "url": "https://api.hitnova.net/s/trtbelgesel/mono.m3u8",
+    "url": "https://tv-trtbelgesel.medya.trt.com.tr/master.m3u8",
     "category": "Belgesel",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/b/ba/TRT_Belgesel_kurumsal_logo_%282015-2019%29.png"
   },
   {
+    "name": "TRT Belgesel Yedek",
+    "url": "https://api.hitnova.net/s/trtbelgesel/mono.m3u8",
+    "category": "Belgesel"
+  },
+  {
     "name": "National Geographic",
     "url": "https://api.hitnova.net/s/natgeo/mono.m3u8",
+    "category": "Belgesel"
+  },
+  {
+    "name": "Nat Geo Wild",
+    "url": "https://api.hitnova.net/s/natgeowild/mono.m3u8",
     "category": "Belgesel"
   },
   {
@@ -309,6 +407,16 @@
   {
     "name": "History Channel",
     "url": "https://api.hitnova.net/s/history/mono.m3u8",
+    "category": "Belgesel"
+  },
+  {
+    "name": "Animal Planet",
+    "url": "https://api.hitnova.net/s/animalplanet/mono.m3u8",
+    "category": "Belgesel"
+  },
+  {
+    "name": "BBC Earth",
+    "url": "https://api.hitnova.net/s/bbcearth/mono.m3u8",
     "category": "Belgesel"
   },
   {
@@ -327,6 +435,11 @@
     "category": "Müzik"
   },
   {
+    "name": "Kral FM TV",
+    "url": "https://api.hitnova.net/s/kralfm/mono.m3u8",
+    "category": "Müzik"
+  },
+  {
     "name": "Power Türk",
     "url": "https://api.hitnova.net/s/powerturk/mono.m3u8",
     "category": "Müzik"
@@ -337,8 +450,28 @@
     "category": "Müzik"
   },
   {
+    "name": "Number1 TV",
+    "url": "https://api.hitnova.net/s/number1/mono.m3u8",
+    "category": "Müzik"
+  },
+  {
+    "name": "Number1 Türk",
+    "url": "https://api.hitnova.net/s/number1turk/mono.m3u8",
+    "category": "Müzik"
+  },
+  {
+    "name": "Dream TV",
+    "url": "https://api.hitnova.net/s/dreamtv/mono.m3u8",
+    "category": "Müzik"
+  },
+  {
     "name": "Sinema TV",
     "url": "https://api.hitnova.net/s/sinematv/mono.m3u8",
+    "category": "Sinema"
+  },
+  {
+    "name": "Sinema TV 1001",
+    "url": "https://api.hitnova.net/s/sinematv1001/mono.m3u8",
     "category": "Sinema"
   },
   {
@@ -352,6 +485,21 @@
     "category": "Sinema"
   },
   {
+    "name": "MovieSmart Premium",
+    "url": "https://api.hitnova.net/s/moviesmartpremium/mono.m3u8",
+    "category": "Sinema"
+  },
+  {
+    "name": "MovieSmart Action",
+    "url": "https://api.hitnova.net/s/moviesmartaction/mono.m3u8",
+    "category": "Sinema"
+  },
+  {
+    "name": "MovieSmart Family",
+    "url": "https://api.hitnova.net/s/moviesmartfamily/mono.m3u8",
+    "category": "Sinema"
+  },
+  {
     "name": "Diyanet TV",
     "url": "https://api.hitnova.net/s/diyanettv/mono.m3u8",
     "category": "Dini"
@@ -362,9 +510,9 @@
     "category": "Dini"
   },
   {
-    "name": "TRT 1 (Yedek)",
-    "url": "https://api.hitnova.net/s/trt1/mono.m3u8",
-    "category": "TRT"
+    "name": "Hicaz TV",
+    "url": "https://api.hitnova.net/s/hicaztv/mono.m3u8",
+    "category": "Dini"
   },
   {
     "name": "TRT World",
@@ -384,6 +532,11 @@
   {
     "name": "TRT Arabi",
     "url": "https://api.hitnova.net/s/trtarabi/mono.m3u8",
+    "category": "TRT"
+  },
+  {
+    "name": "TRT Türk",
+    "url": "https://api.hitnova.net/s/trtturk/mono.m3u8",
     "category": "TRT"
   }
 ]

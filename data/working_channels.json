@@ -1,18 +1,25 @@
 [
   {
+    "name": "TRT 1 Yedek",
+    "url": "https://api.hitnova.net/s/trt1/mono.m3u8",
+    "category": "Genel",
+    "status": "working",
+    "response_time": 613.57
+  },
+  {
     "name": "ATV",
     "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8",
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png",
     "status": "working",
-    "response_time": 2853.37
+    "response_time": 5761.28
   },
   {
-    "name": "ATV (Yedek)",
+    "name": "ATV Yedek",
     "url": "https://api.hitnova.net/s/atv/mono.m3u8",
     "category": "Genel",
     "status": "working",
-    "response_time": 691.47
+    "response_time": 762.05
   },
   {
     "name": "Kanal D",
@@ -20,7 +27,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/a/a4/Kanal_D_logo.png",
     "status": "working",
-    "response_time": 8864.07
+    "response_time": 795.65
   },
   {
     "name": "Show TV",
@@ -28,7 +35,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Logo_of_Show_TV.png",
     "status": "working",
-    "response_time": 1027.58
+    "response_time": 938.3
   },
   {
     "name": "Star TV",
@@ -36,7 +43,7 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/9/92/Star_TV_.png",
     "status": "working",
-    "response_time": 1212.88
+    "response_time": 1189.43
   },
   {
     "name": "Kanal 7",
@@ -44,7 +51,7 @@
     "category": "Genel",
     "logo": "https://static.wikia.nocookie.net/logopedia/images/c/ce/Kanal_7_logosu.png",
     "status": "working",
-    "response_time": 1273.81
+    "response_time": 2781.07
   },
   {
     "name": "TV8",
@@ -52,14 +59,14 @@
     "category": "Genel",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png",
     "status": "working",
-    "response_time": 755.11
+    "response_time": 713.78
   },
   {
     "name": "TV8.5",
     "url": "https://api.hitnova.net/s/tv85/mono.m3u8",
     "category": "Genel",
     "status": "working",
-    "response_time": 717.57
+    "response_time": 661.21
   },
   {
     "name": "TRT Haber",
@@ -67,7 +74,7 @@
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/TRT_Haber_logosu_%282013-2020%29.png",
     "status": "working",
-    "response_time": 363.11
+    "response_time": 488.0
   },
   {
     "name": "NTV",
@@ -75,7 +82,7 @@
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b5/NTV_logo.png",
     "status": "working",
-    "response_time": 757.61
+    "response_time": 1015.68
   },
   {
     "name": "Habertürk",
@@ -83,14 +90,14 @@
     "category": "Haber",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/7/78/Haberturk_logo.png",
     "status": "working",
-    "response_time": 889.19
+    "response_time": 723.23
   },
   {
     "name": "Haber Global",
     "url": "https://tv.ensonhaber.com/haberglobal/haberglobal_720p.m3u8",
     "category": "Haber",
     "status": "working",
-    "response_time": 293.49
+    "response_time": 222.16
   },
   {
     "name": "TRT Spor",
@@ -98,14 +105,14 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c4/TRT_Spor_kurumsal_logo.png",
     "status": "working",
-    "response_time": 529.03
+    "response_time": 321.69
   },
   {
-    "name": "TRT Spor 2",
+    "name": "TRT Spor Yıldız",
     "url": "https://api.hitnova.net/s/trtspor2/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 291.75
+    "response_time": 567.06
   },
   {
     "name": "A Spor",
@@ -113,7 +120,7 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/e/e9/A_Spor_logosu.png",
     "status": "working",
-    "response_time": 283.99
+    "response_time": 316.33
   },
   {
     "name": "S Sport",
@@ -121,14 +128,14 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/0/07/S_Sport_logo.png",
     "status": "working",
-    "response_time": 285.11
+    "response_time": 320.62
   },
   {
     "name": "S Sport 2",
     "url": "https://api.hitnova.net/s/ss2/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 249.61
+    "response_time": 524.18
   },
   {
     "name": "Smart Spor",
@@ -136,14 +143,14 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png",
     "status": "working",
-    "response_time": 311.18
+    "response_time": 314.02
   },
   {
     "name": "Smart Spor 2",
     "url": "https://api.hitnova.net/s/sms2/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 311.3
+    "response_time": 317.93
   },
   {
     "name": "Eurosport 1",
@@ -151,7 +158,7 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Eurosport_1_Logo_2015.png",
     "status": "working",
-    "response_time": 318.73
+    "response_time": 315.77
   },
   {
     "name": "Eurosport 2",
@@ -159,29 +166,35 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Eurosport_2_Logo_2015.png",
     "status": "working",
-    "response_time": 343.26
+    "response_time": 311.36
   },
   {
     "name": "Tivibu Spor 1",
     "url": "https://api.hitnova.net/s/t1/mono.m3u8",
     "category": "Spor",
-    "logo": "https://upload.wikimedia.org/wikipedia/tr/d/db/TivibuSporLogo1.PNG",
     "status": "working",
-    "response_time": 271.77
+    "response_time": 580.96
   },
   {
     "name": "Tivibu Spor 2",
     "url": "https://api.hitnova.net/s/t2/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 247.82
+    "response_time": 308.63
   },
   {
     "name": "Tivibu Spor 3",
     "url": "https://api.hitnova.net/s/t3/mono.m3u8",
     "category": "Spor",
     "status": "working",
-    "response_time": 296.35
+    "response_time": 314.85
+  },
+  {
+    "name": "Tivibu Spor 4",
+    "url": "https://api.hitnova.net/s/t4/mono.m3u8",
+    "category": "Spor",
+    "status": "working",
+    "response_time": 278.71
   },
   {
     "name": "CBC Sport",
@@ -189,13 +202,6 @@
     "category": "Spor",
     "logo": "https://upload.wikimedia.org/wikipedia/az/0/04/CBC_Sport_TV_loqo.png",
     "status": "working",
-    "response_time": 274.96
-  },
-  {
-    "name": "TRT 1 (Yedek)",
-    "url": "https://api.hitnova.net/s/trt1/mono.m3u8",
-    "category": "TRT",
-    "status": "working",
-    "response_time": 256.15
+    "response_time": 273.05
   }
 ]
