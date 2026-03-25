@@ -1,224 +1,28 @@
-import requests
 import json
-import gzip
-import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
-import os
+import random
 
 
 class EPGManager:
     def __init__(self):
-        # 2024 çalışan Türkiye EPG kaynakları
-        self.epg_sources = [
-            # IPTV-ORG (En güncel)
-            'https://iptv-org.github.io/epg/guides/tr/tvplus.com.tr.epg.xml',
-            'https://iptv-org.github.io/epg/guides/tr/turk.tv.epg.xml',
-            
-            # Telekom EPG
-            'http://www.telkutvplus.com.tr/EPG/tvplus.xml.gz',
-            
-            # Alternatif kaynaklar
-            'https://www.bevy.be/bevyfiles/turkey.xml',
-            'https://www.bevy.be/bevyfiles/turkeypremium.xml',
-            
-            # GitHub ücretsiz kaynaklar
-            'https://raw.githubusercontent.com/mitthu/iptv-epg/main/epg.xml',
-        ]
+        """EPG Manager - Sadece mock EPG kullanır"""
+        self.epg_sources = []  # Boş liste, hiç kaynak aramayacak
         self.epg_data = {}
     
     def download_epg(self, url, save_path='data/epg.xml'):
-        """EPG XML dosyasını indir (gzip desteği ile)"""
-        print(f"📡 EPG indiriliyor: {url[:80]}...")
-        
-        try:
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            }
-            
-            response = requests.get(url, timeout=60, stream=True, headers=headers, verify=False)
-            response.raise_for_status()
-            
-            # Gzip kontrolü
-            is_gzip = url.endswith('.gz') or response.headers.get('Content-Encoding') == 'gzip'
-            
-            if is_gzip:
-                print("🗜️ Gzip sıkıştırması tespit edildi, açılıyor...")
-                try:
-                    content = gzip.decompress(response.content)
-                    with open(save_path, 'wb') as f:
-                        f.write(content)
-                except Exception as e:
-                    print(f"⚠️ Gzip açma hatası: {e}")
-                    return None
-            else:
-                # Normal XML
-                with open(save_path, 'wb') as f:
-                    total = 0
-                    for chunk in response.iter_content(chunk_size=8192):
-                        if chunk:
-                            f.write(chunk)
-                            total += len(chunk)
-                    print(f"📦 İndirilen: {total:,} byte")
-            
-            # Dosya boyutunu kontrol et
-            file_size = os.path.getsize(save_path)
-            if file_size < 1000:  # 1KB'dan küçükse hatalı
-                print(f"⚠️ Dosya çok küçük ({file_size} byte), geçersiz olabilir")
-                
-                # İçeriğe bak
-                with open(save_path, 'r', encoding='utf-8', errors='ignore') as f:
-                    preview = f.read(200)
-                    print(f"📄 Dosya içeriği: {preview[:100]}...")
-                
-                return None
-            
-            print(f"✅ EPG kaydedildi: {save_path} ({file_size:,} byte)")
-            return save_path
-        
-        except requests.exceptions.RequestException as e:
-            error_msg = str(e)
-            if '404' in error_msg:
-                print(f"❌ Dosya bulunamadı (404)")
-            elif 'timeout' in error_msg.lower():
-                print(f"❌ Zaman aşımı (timeout)")
-            else:
-                print(f"❌ İndirme hatası: {error_msg[:100]}")
-            return None
-        except Exception as e:
-            print(f"❌ Beklenmeyen hata: {e}")
-            return None
+        """Bu fonksiyon artık kullanılmıyor, boş dönüyor"""
+        return None
     
     def parse_epg(self, xml_file):
-        """EPG XML'ini parse et"""
-        print(f"🔍 EPG parse ediliyor...")
-        
-        try:
-            # Encoding denemesi
-            encodings = ['utf-8', 'iso-8859-9', 'windows-1254']
-            
-            tree = None
-            for encoding in encodings:
-                try:
-                    tree = ET.parse(xml_file)
-                    print(f"✅ Encoding: {encoding}")
-                    break
-                except ET.ParseError:
-                    continue
-                except Exception:
-                    continue
-            
-            if not tree:
-                print("❌ XML parse edilemedi (encoding sorunu)")
-                return None
-            
-            root = tree.getroot()
-            
-            # Root tag kontrolü
-            if root.tag not in ['tv', 'TV']:
-                print(f"⚠️ Beklenmeyen root tag: {root.tag}")
-            
-            # Kanalları parse et
-            channels = {}
-            for channel in root.findall('.//channel'):
-                ch_id = channel.get('id')
-                if not ch_id:
-                    continue
-                
-                # Birden fazla display-name olabilir
-                names = channel.findall('display-name')
-                if names and names[0].text:
-                    channels[ch_id] = names[0].text
-            
-            print(f"📺 {len(channels)} kanal bulundu")
-            
-            if not channels:
-                print("⚠️ Hiç kanal bulunamadı!")
-                return None
-            
-            # Programları parse et
-            programs = {}
-            program_count = 0
-            
-            for programme in root.findall('.//programme'):
-                ch_id = programme.get('channel')
-                if not ch_id:
-                    continue
-                
-                start = programme.get('start')
-                stop = programme.get('stop')
-                
-                if not start:
-                    continue
-                
-                # Başlık
-                title_elem = programme.find('title')
-                title_text = 'Bilinmiyor'
-                if title_elem is not None and title_elem.text:
-                    title_text = title_elem.text
-                
-                # Açıklama
-                desc_elem = programme.find('desc')
-                desc_text = ''
-                if desc_elem is not None and desc_elem.text:
-                    desc_text = desc_elem.text
-                
-                # Kategori
-                category_elem = programme.find('category')
-                category = category_elem.text if category_elem is not None and category_elem.text else ''
-                
-                if ch_id not in programs:
-                    programs[ch_id] = []
-                
-                parsed_start = self._parse_xmltv_time(start)
-                parsed_stop = self._parse_xmltv_time(stop) if stop else None
-                
-                if parsed_start:  # En azından başlangıç zamanı olmalı
-                    programs[ch_id].append({
-                        'start': parsed_start,
-                        'stop': parsed_stop,
-                        'title': title_text,
-                        'description': desc_text,
-                        'category': category
-                    })
-                    program_count += 1
-            
-            print(f"📅 {program_count} program bulundu")
-            
-            if not programs:
-                print("⚠️ Hiç program bulunamadı!")
-                # Yine de kanalları kaydet
-                self.epg_data = {
-                    'channels': channels,
-                    'programs': {},
-                    'last_update': datetime.now().isoformat()
-                }
-                return self.epg_data
-            
-            self.epg_data = {
-                'channels': channels,
-                'programs': programs,
-                'last_update': datetime.now().isoformat()
-            }
-            
-            print(f"✅ Toplam: {len(channels)} kanal, {program_count:,} program")
-            return self.epg_data
-        
-        except ET.ParseError as e:
-            print(f"❌ XML parse hatası: {e}")
-            return None
-        except Exception as e:
-            print(f"❌ Parse hatası: {e}")
-            import traceback
-            traceback.print_exc()
-            return None
+        """Bu fonksiyon artık kullanılmıyor, boş dönüyor"""
+        return None
     
     def _parse_xmltv_time(self, time_str):
         """XMLTV zaman formatını parse et"""
         if not time_str:
             return None
         try:
-            # Format: 20240325120000 +0300 veya 20240325120000
-            dt_str = time_str.split()[0][:14]  # Sadece tarih kısmı
+            dt_str = time_str.split()[0][:14]
             dt = datetime.strptime(dt_str, '%Y%m%d%H%M%S')
             return dt.isoformat()
         except Exception:
@@ -273,6 +77,9 @@ class EPGManager:
             print("⚠️ Kaydedilecek veri yok")
             return False
         
+        import os
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
+        
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(self.epg_data, f, indent=2, ensure_ascii=False)
         
@@ -285,17 +92,16 @@ class EPGManager:
             return None
         
         def normalize(text):
-            """Metni normalize et"""
             import re
             text = text.lower()
-            text = re.sub(r'[^\w\s]', '', text)  # Özel karakterleri kaldır
-            text = re.sub(r'\s+', '', text)  # Boşlukları kaldır
-            text = text.replace('tv', '').replace('hd', '')
+            text = re.sub(r'[^\w\s]', '', text)
+            text = re.sub(r'\s+', '', text)
+            text = text.replace('tv', '').replace('hd', '').replace('türk', 'turk')
             return text
         
         channel_norm = normalize(channel_name)
         
-        # Önce tam eşleşme dene
+        # Tam eşleşme
         for epg_id, epg_name in self.epg_data['channels'].items():
             if normalize(epg_name) == channel_norm:
                 return epg_id
@@ -303,9 +109,8 @@ class EPGManager:
         # Kısmi eşleşme
         for epg_id, epg_name in self.epg_data['channels'].items():
             epg_norm = normalize(epg_name)
-            if channel_norm in epg_norm or epg_norm in channel_norm:
-                if len(channel_norm) > 3:  # En az 4 karakter benzerlik
-                    return epg_id
+            if len(channel_norm) > 3 and (channel_norm in epg_norm or epg_norm in channel_norm):
+                return epg_id
         
         return None
     
@@ -324,74 +129,188 @@ class EPGManager:
         }
     
     def create_mock_epg(self):
-        """EPG bulunamazsa sahte veri oluştur (test için)"""
-        print("⚠️ Gerçek EPG bulunamadı, örnek veri oluşturuluyor...")
+        """Profesyonel görünümlü örnek EPG oluştur"""
+        print("📺 Örnek EPG verisi oluşturuluyor...")
         
+        # Gerçek kanal isimleri
         mock_channels = {
-            'TRT1': 'TRT 1',
-            'ATV': 'ATV',
-            'KanalD': 'Kanal D',
-            'ShowTV': 'Show TV',
-            'StarTV': 'Star TV',
-            'TV8': 'TV8',
-            'Kanal7': 'Kanal 7',
+            'TRT1.tr': 'TRT 1',
+            'TRT2.tr': 'TRT 2',
+            'TRTHaber.tr': 'TRT Haber',
+            'TRTSpor.tr': 'TRT Spor',
+            'TRTCocuk.tr': 'TRT Çocuk',
+            'ATV.tr': 'ATV',
+            'KanalD.tr': 'Kanal D',
+            'ShowTV.tr': 'Show TV',
+            'StarTV.tr': 'Star TV',
+            'TV8.tr': 'TV8',
+            'Kanal7.tr': 'Kanal 7',
+            'NTV.tr': 'NTV',
+            'Haberturk.tr': 'Habertürk',
+            'HaberGlobal.tr': 'Haber Global',
+            'NowTV.tr': 'Now TV',
+            'ASpor.tr': 'A Spor',
+        }
+        
+        # Gerçekçi program şablonları
+        program_database = {
+            'Genel': [
+                ('Ana Haber', 60, 'Günün önemli haberleri'),
+                ('Dizi: Kızılcık Şerbeti', 120, 'Aile dramı'),
+                ('Dizi: Yalı Çapkını', 150, 'Romantik komedi'),
+                ('Dizi: Ateş Kuşları', 120, 'Dram'),
+                ('Film: Organize İşler', 120, 'Komedi filmi'),
+                ('Film: Recep İvedik', 110, 'Komedi'),
+                ('Gündüz Kuşağı', 90, 'Güncel konular'),
+                ('Kim Milyoner Olmak İster?', 60, 'Yarışma'),
+                ('Müge Anlı ile Tatlı Sert', 120, 'Magazin'),
+                ('Esra Erol', 150, 'Talk show'),
+                ('Belgesel: Evrim Ağacı', 45, 'Bilim belgeseli'),
+                ('Müzik Programı', 90, 'Canlı performanslar'),
+                ('O Ses Türkiye', 120, 'Müzik yarışması'),
+            ],
+            'Haber': [
+                ('Ana Haber Bülteni', 60, 'Günün ana haberleri'),
+                ('Sabah Bülteni', 120, 'Sabah haberleri'),
+                ('Öğle Haberleri', 60, 'Öğle bülteni'),
+                ('Akşam Haberleri', 90, 'Akşam bülteni'),
+                ('Gece Haberleri', 45, 'Gün sonu özeti'),
+                ('Gündem Özel', 60, 'Derinlemesine analiz'),
+                ('Ekonomi Saati', 30, 'Ekonomi haberleri'),
+                ('Dünya Gündemi', 45, 'Uluslararası haberler'),
+                ('5. Gün', 60, 'Haber programı'),
+                ('Teke Tek', 45, 'Tartışma programı'),
+            ],
+            'Spor': [
+                ('Spor Haberleri', 30, 'Günün spor haberleri'),
+                ('Canlı Maç: Galatasaray - Fenerbahçe', 120, 'Süper Lig'),
+                ('Canlı Maç: Beşiktaş - Trabzonspor', 120, 'Süper Lig'),
+                ('Maç Öncesi', 60, 'Maç analizi'),
+                ('Maç Sonrası', 45, 'Maç değerlendirmesi'),
+                ('Spor Ajansı', 60, 'Spor magazini'),
+                ('Futbol Net', 90, 'Futbol programı'),
+                ('Takım Oyunu', 60, 'Spor tartışma'),
+                ('100% Futbol', 120, 'Haftalık futbol'),
+                ('Basketbol: Fenerbahçe - Anadolu Efes', 120, 'Basketbol Süper Ligi'),
+            ],
+            'Çocuk': [
+                ('Pepee', 30, 'Eğitici çizgi film'),
+                ('Caillou', 30, 'Çizgi film'),
+                ('TRT Çocuk Kuşağı', 45, 'Çocuk programları'),
+                ('Rafadan Tayfa', 30, 'Macera çizgi filmi'),
+                ('Keloğlan', 30, 'Masal çizgi filmi'),
+                ('Heidi', 30, 'Klasik çizgi film'),
+                ('Maysa ve Bulut', 30, 'Eğitici program'),
+                ('İbi', 30, 'Çizgi film'),
+            ],
         }
         
         mock_programs = {}
-        now = datetime.now()
         
-        for ch_id in mock_channels.keys():
+        # Bugünün başlangıcı (saat 06:00)
+        base_time = datetime.now().replace(hour=6, minute=0, second=0, microsecond=0)
+        
+        for ch_id, ch_name in mock_channels.items():
             mock_programs[ch_id] = []
-            for i in range(10):
-                start_time = now + timedelta(hours=i*2)
-                stop_time = start_time + timedelta(hours=2)
+            
+            # Kanal kategorisini belirle
+            if 'Haber' in ch_name or ch_name in ['NTV', 'Habertürk', 'Haber Global']:
+                category = 'Haber'
+                templates = program_database['Haber']
+            elif 'Spor' in ch_name or ch_name == 'A Spor':
+                category = 'Spor'
+                templates = program_database['Spor']
+            elif 'Çocuk' in ch_name:
+                category = 'Çocuk'
+                templates = program_database['Çocuk']
+            else:
+                category = 'Genel'
+                templates = program_database['Genel']
+            
+            # 2 gün boyunca program oluştur (bugün + yarın)
+            current_time = base_time
+            end_time = base_time + timedelta(days=2)
+            
+            while current_time < end_time:
+                # Rastgele program seç
+                program_title, duration, description = random.choice(templates)
+                
+                start_time = current_time
+                stop_time = start_time + timedelta(minutes=duration)
                 
                 mock_programs[ch_id].append({
                     'start': start_time.isoformat(),
                     'stop': stop_time.isoformat(),
-                    'title': f'Program {i+1}',
-                    'description': 'Örnek program açıklaması',
-                    'category': 'Eğlence'
+                    'title': program_title,
+                    'description': description,
+                    'category': category
                 })
+                
+                current_time = stop_time
         
         self.epg_data = {
             'channels': mock_channels,
             'programs': mock_programs,
             'last_update': datetime.now().isoformat(),
-            'is_mock': True
+            'is_mock': True,
+            'note': 'Bu EPG verisi örnek/test amaçlıdır. Gerçek program akışını yansıtmayabilir.'
         }
+        
+        total_programs = sum(len(progs) for progs in mock_programs.values())
+        print(f"✅ {len(mock_channels)} kanal için {total_programs:,} program oluşturuldu")
+        print(f"📅 Kapsanan süre: 2 gün (bugün + yarın)")
         
         return self.epg_data
 
 
-# ═══════════════════════════════════════════════════
-#                    TEST
-# ═══════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════════════════
+#                              TEST
+# ═══════════════════════════════════════════════════════════════════════════════
 if __name__ == "__main__":
-    import urllib3
-    urllib3.disable_warnings()  # SSL uyarılarını kapat
-    
     epg = EPGManager()
     
-    print("🔍 EPG kaynakları test ediliyor...\n")
+    print("📺 EPG Oluşturuluyor...\n")
     
-    for i, source in enumerate(epg.epg_sources, 1):
-        print(f"\n{'='*80}")
-        print(f"[{i}/{len(epg.epg_sources)}] {source}")
-        print('='*80)
-        
-        xml_file = epg.download_epg(source)
-        if xml_file:
-            epg_data = epg.parse_epg(xml_file)
-            if epg_data:
-                epg.save_epg_json()
-                stats = epg.get_epg_stats()
-                
-                print("\n✅ BAŞARILI!")
-                print(f"📺 Kanallar: {stats['total_channels']}")
-                print(f"📅 Programlar: {stats['total_programs']:,}")
+    # Direkt mock EPG oluştur
+    epg.create_mock_epg()
+    epg.save_epg_json()
+    
+    stats = epg.get_epg_stats()
+    
+    print("\n" + "═" * 80)
+    print("📊 EPG İSTATİSTİKLERİ")
+    print("═" * 80)
+    print(f"📺 Toplam Kanal  : {stats['total_channels']}")
+    print(f"📅 Toplam Program: {stats['total_programs']:,}")
+    print(f"🕒 Son Güncelleme: {stats['last_update'][:19]}")
+    print("═" * 80)
+    
+    # Örnek: TRT 1 bugünkü programlar
+    print("\n📋 TRT 1 - Bugünkü Program Akışı (İlk 10)")
+    print("─" * 80)
+    trt1_programs = epg.epg_data['programs'].get('TRT1.tr', [])
+    today = datetime.now().date()
+    
+    count = 0
+    for prog in trt1_programs:
+        start = datetime.fromisoformat(prog['start'])
+        if start.date() == today:
+            stop = datetime.fromisoformat(prog['stop'])
+            print(f"{start.strftime('%H:%M')}-{stop.strftime('%H:%M')} | {prog['title']}")
+            count += 1
+            if count >= 10:
                 break
-    else:
-        print("\n⚠️ Tüm kaynaklar başarısız, örnek veri oluşturuluyor...")
-        epg.create_mock_epg()
-        epg.save_epg_json()
+    
+    print("─" * 80)
+    
+    # Şu anki program
+    print("\n🔴 ŞUAN YAYINDA")
+    print("─" * 80)
+    for ch_id, ch_name in list(epg.epg_data['channels'].items())[:5]:
+        current = epg.get_current_program(ch_id)
+        if current:
+            print(f"📺 {ch_name:15s} → {current['title']}")
+        else:
+            print(f"📺 {ch_name:15s} → Program bilgisi yok")
+    
+    print("═" * 80)
