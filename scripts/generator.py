@@ -41,26 +41,106 @@ def update_readme(channels):
         cat = ch.get('category', 'Diger')
         categories[cat] = categories.get(cat, 0) + 1
     
-    readme = f"""# 📺 OmEr TV - Türkiye IPTV
-
-![Auto Update](https://github.com/titkenan/Omer_TV/actions/workflows/update_m3u.yml/badge.svg)
-
-> 🔄 Otomatik güncellenen Türkiye TV kanalları
-
-## 📊 İstatistikler
-
-- **Toplam Kanal:** {total}
-- **Son Güncelleme:** {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-
-### Kategoriler
-
-"""
+    # README içeriği
+    readme_lines = [
+        "# 📺 OmEr TV - Türkiye IPTV",
+        "",
+        "![Auto Update](https://github.com/titkenan/Omer_TV/actions/workflows/update_m3u.yml/badge.svg)",
+        f"![Channels](https://img.shields.io/badge/Channels-{total}-brightgreen)",
+        f"![Last Update](https://img.shields.io/badge/Last%20Update-{datetime.now().strftime('%Y--%m--%d')}-blue)",
+        "",
+        "> 🔄 Otomatik güncellenen, test edilmiş Türkiye TV kanalları",
+        "",
+        "---",
+        "",
+        "## 📊 İstatistikler",
+        "",
+        f"- **Toplam Kanal:** {total}",
+        f"- **Son Güncelleme:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}",
+        "- **Güncelleme Sıklığı:** Her 6 saatte bir",
+        "",
+        "### Kategoriler",
+        ""
+    ]
     
     for cat, count in sorted(categories.items()):
-        readme += f"- **{cat}:** {count} kanal\n"
+        readme_lines.append(f"- **{cat}:** {count} kanal")
     
-    readme += f"""
+    readme_lines.extend([
+        "",
+        "---",
+        "",
+        "## 🚀 Kullanım",
+        "",
+        "### M3U Linki",
+        "```",
+        "https://raw.githubusercontent.com/titkenan/Omer_TV/main/channels.m3u",
+        "```",
+        "",
+        "### VLC ile Aç",
+        "1. VLC Player'ı aç",
+        "2. Media > Open Network Stream",
+        "3. URL'yi yapıştır",
+        "4. Play",
+        "",
+        "### IPTV Uygulamaları",
+        "- **Android:** IPTV, TiviMate",
+        "- **iOS:** GSE Smart IPTV",
+        "- **Smart TV:** Smart IPTV",
+        "",
+        "---",
+        "",
+        "## 📋 Kanal Listesi",
+        ""
+    ])
+    
+    for category in sorted(categories.keys()):
+        matching = [ch for ch in channels if ch.get('category', 'Diger') == category]
+        readme_lines.append(f"### 📂 {category} ({len(matching)} kanal)")
+        readme_lines.append("")
+        
+        for ch in sorted(matching, key=lambda x: x['name']):
+            ms = ch.get('response_time', 0)
+            if ms < 1000:
+                status = "🟢"
+            elif ms < 3000:
+                status = "🟡"
+            else:
+                status = "🔴"
+            readme_lines.append(f"- {status} **{ch['name']}** ({ms}ms)")
+        
+        readme_lines.append("")
+    
+    readme_lines.extend([
+        "---",
+        "",
+        "## ⚙️ Otomatik Güncelleme",
+        "",
+        "Bu liste GitHub Actions ile otomatik güncellenir:",
+        "",
+        "1. Her 6 saatte bir stream'ler test edilir",
+        "2. Çalışmayan kanallar çıkarılır",
+        "3. M3U dosyası güncellenir",
+        "",
+        "---",
+        "",
+        "## 📝 Lisans",
+        "",
+        "MIT License - Özgürce kullanabilirsiniz.",
+        "",
+        "---",
+        "",
+        "**⭐ Beğendiyseniz yıldız vermeyi unutmayın!**",
+        ""
+    ])
+    
+    readme = '\n'.join(readme_lines)
+    
+    with open('README.md', 'w', encoding='utf-8') as f:
+        f.write(readme)
+    
+    print("✅ README.md güncellendi")
 
-## 🚀 Kullanım
 
-### M3U Linki
+if __name__ == "__main__":
+    generate_m3u()
