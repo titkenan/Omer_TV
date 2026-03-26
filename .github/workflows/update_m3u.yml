@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # Bu satır önemli!
+  contents: write
 
 jobs:
   update:
@@ -17,10 +17,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update from new sources
-      run: |
-        python add_new_sources.py
+          fetch-depth: 0
+      
+      - name: Pull Latest Changes
+        run: |
+          git pull origin main --rebase || true
       
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -36,6 +37,9 @@ jobs:
       - name: Run Tester
         run: python scripts/tester.py
       
+      - name: Update from New Sources
+        run: python add_new_sources.py
+      
       - name: Generate M3U
         run: python scripts/generator.py
       
@@ -49,8 +53,8 @@ jobs:
           git add -A
           if ! git diff --staged --quiet; then
             git commit -m "🔄 Auto update $(date +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase origin main
             git push
           else
             echo "No changes to commit"
           fi
-# .github/workflows/update_m3u.yml içine ekle
