@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
-# Dosya: add_new_sources.py
 """
-Mevcut Omer_TV projesine yeni kaynakları ekle
-- CanliTV.com scraper sonuçları
-- GitHub M3U dosyaları
+Omer TV - Kanal Listesi Güncelleyici
+CanliTV + Harici M3U kaynaklarını mevcut listeye ekler
 """
 
 import json
 import requests
 import re
 from datetime import datetime
+import os
 
 def parse_m3u(m3u_content):
-    """M3U parse et"""
+    """M3U içeriğini parse et"""
     channels = []
     lines = m3u_content.strip().split('\n')
     
@@ -21,19 +20,29 @@ def parse_m3u(m3u_content):
         line = lines[i].strip()
         
         if line.startswith('#EXTINF'):
+            # Bilgileri çıkar
             name = line.split(',')[-1].strip() if ',' in line else 'Unknown'
             
             logo = ''
             category = 'Genel'
+            tvg_id = ''
             
+            # tvg-logo
             logo_match = re.search(r'tvg-logo="([^"]+)"', line)
             if logo_match:
                 logo = logo_match.group(1)
             
+            # group-title
             group_match = re.search(r'group-title="([^"]+)"', line)
             if group_match:
                 category = group_match.group(1)
             
+            # tvg-id
+            id_match = re.search(r'tvg-id="([^"]+)"', line)
+            if id_match:
+                tvg_id = id_match.group(1)
+            
+            # Sonraki satır URL
             i += 1
             if i < len(lines):
                 url = lines[i].strip()
@@ -43,7 +52,8 @@ def parse_m3u(m3u_content):
                         'name': name,
                         'url': url,
                         'category': category,
-                        'logo': logo
+                        'logo': logo,
+                        'tvg_id': tvg_id
                     })
         
         i += 1
@@ -60,121 +70,148 @@ def load_existing_channels():
         print(f"✅ Mevcut kanallar: {len(channels)}")
         return channels
     except FileNotFoundError:
-        print("⚠️ channels.m3u bulunamadı, yeni dosya oluşturulacak")
+        print("⚠️ channels.m3u bulunamadı")
         return []
 
 def load_canlitv_channels():
     """CanliTV scraper sonuçlarını yükle"""
-    try:
-        with open('data/canlitv_channels.json', 'r', encoding='utf-8') as f:
-            channels = json.load(f)
-        print(f"✅ CanliTV kanalları: {len(channels)}")
-        return channels
-    except FileNotFoundError:
-        print("⚠️ canlitv_channels.json bulunamadı")
-        return []
+    paths = [
+        'data/canlitv_channels.json',
+        '../data/canlitv_channels.json',
+        'canlitv_channels.json'
+    ]
+    
+    for path in paths:
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                channels = json.load(f)
+            print(f"✅ CanliTV kanalları: {len(channels)} ({path})")
+            return channels
+        except FileNotFoundError:
+            continue
+    
+    print("⚠️ canlitv_channels.json bulunamadı")
+    return []
 
 def load_external_m3u():
     """Harici M3U dosyalarını yükle"""
-    external_sources = [
-        "https://raw.githubusercontent.com/impresents/my-iptv-list/refs/heads/main/trlist.m3u"
+    sources = [
+        "https://raw.githubusercontent.com/impresents/my-iptv-list/refs/heads/main/trlist.m3u",
+        "https://iptv-org.github.io/iptv/countries/tr.m3u"
     ]
     
     all_channels = []
     
-    for url in external_sources:
+    for url in sources:
         try:
-            print(f"📥 İndiriliyor: {url}")
-            response = requests.get(url, timeout=10)
+            print(f"📥 İndiriliyor: {url.split('/')[-2]}/{url.split('/')[-1]}")
+            response = requests.get(url, timeout=15)
             response.raise_for_status()
             
             channels = parse_m3u(response.text)
             all_channels.extend(channels)
             print(f"   ✅ {len(channels)} kanal")
         except Exception as e:
-            print(f"   ❌ Hata: {e}")
+            print(f"   ❌ Hata: {str(e)[:50]}")
     
     return all_channels
 
 def merge_and_deduplicate(channel_lists):
-    """Tüm kanal listelerini birleştir ve tekrarları temizle"""
+    """Birleştir ve tekrarları temizle"""
     
     all_channels = []
     for channels in channel_lists:
         all_channels.extend(channels)
     
-    # URL bazlı deduplikasyon
+    print(f"\n🔄 Toplam {len(all_channels)} kanal birleştiriliyor...")
+    
+    # URL ve isim bazlı deduplikasyon
     unique_channels = []
     seen_urls = set()
     seen_names = set()
     
     for ch in all_channels:
-        url = ch.get('url', '')
+        url = ch.get('url', '').strip()
         name = ch.get('name', '').lower().strip()
         
-        # URL veya isim tekrarı varsa atla
-        if url in seen_urls or name in seen_names:
+        # Geçersiz kontroller
+        if not url or not name:
             continue
         
-        # Geçersiz URL kontrolü
-        if not url or not url.startswith('http'):
+        if not url.startswith('http'):
+            continue
+        
+        # Tekrar kontrolü
+        if url in seen_urls:
+            continue
+        
+        # İsim benzerliği kontrolü (çok benzer isimler)
+        name_simple = re.sub(r'[^a-z0-9]', '', name)
+        if name_simple in seen_names:
             continue
         
         unique_channels.append(ch)
         seen_urls.add(url)
-        seen_names.add(name)
+        seen_names.add(name_simple)
     
+    print(f"✅ {len(unique_channels)} benzersiz kanal")
     return unique_channels
 
 def save_m3u(channels, filename='channels.m3u'):
     """M3U formatında kaydet"""
     
+    # Kategoriye göre sırala
+    channels_sorted = sorted(channels, key=lambda x: (
+        x.get('category', 'Genel'), 
+        x.get('name', '')
+    ))
+    
     with open(filename, 'w', encoding='utf-8') as f:
+        # Header
         f.write('#EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"\n')
-        f.write(f'# Omer TV - Updated: {datetime.now().strftime("%Y-%m-%d %H:%M UTC")}\n')
+        f.write(f'# Omer TV - Updated: {datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")}\n')
         f.write(f'# Total Channels: {len(channels)}\n\n')
         
-        # Kategoriye göre sırala
-        channels_sorted = sorted(channels, key=lambda x: (x.get('category', 'Genel'), x.get('name', '')))
-        
+        # Kanallar
         for ch in channels_sorted:
             name = ch.get('name', 'Unknown')
             url = ch.get('url', '')
             logo = ch.get('logo', '')
             category = ch.get('category', 'Genel')
+            tvg_id = ch.get('tvg_id', name.replace(' ', '_').lower())
             
-            # TVG bilgileri
-            tvg_name = name.replace(' ', '_')
-            tvg_id = tvg_name.lower()
-            
-            f.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{tvg_name}" tvg-logo="{logo}" group-title="{category}",{name}\n')
+            f.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-name="{name}" tvg-logo="{logo}" group-title="{category}",{name}\n')
             f.write(f'{url}\n')
     
-    print(f"\n✅ {filename} kaydedildi ({len(channels)} kanal)")
+    print(f"✅ {filename} kaydedildi ({len(channels)} kanal)")
 
-def save_json(channels, filename='data/all_channels.json'):
+def save_json(channels):
     """JSON formatında da kaydet"""
-    import os
     os.makedirs('data', exist_ok=True)
     
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open('data/all_channels.json', 'w', encoding='utf-8') as f:
         json.dump(channels, f, indent=2, ensure_ascii=False)
     
-    print(f"✅ {filename} kaydedildi")
+    print(f"✅ data/all_channels.json kaydedildi")
 
 def update_stats(channels):
     """stats.json güncelle"""
     
     categories = {}
+    sources = {}
+    
     for ch in channels:
         cat = ch.get('category', 'Genel')
         categories[cat] = categories.get(cat, 0) + 1
+        
+        src = ch.get('source', 'unknown')
+        sources[src] = sources.get(src, 0) + 1
     
     stats = {
-        'last_update': datetime.now().isoformat(),
+        'last_update': datetime.utcnow().isoformat(),
         'total_channels': len(channels),
-        'categories': categories,
-        'sources': ['canlitv.com', 'impresents/my-iptv-list', 'existing']
+        'categories': dict(sorted(categories.items(), key=lambda x: -x[1])),
+        'sources': sources
     }
     
     with open('stats.json', 'w', encoding='utf-8') as f:
@@ -190,14 +227,15 @@ def print_summary(channels):
         cat = ch.get('category', 'Genel')
         categories[cat] = categories.get(cat, 0) + 1
     
-    print("\n" + "="*50)
+    print("\n" + "="*60)
     print("📊 ÖZET İSTATİSTİKLER")
-    print("="*50)
-    print(f"Toplam Kanal: {len(channels)}")
-    print("\nKategoriler:")
-    for cat, count in sorted(categories.items(), key=lambda x: -x[1]):
-        print(f"  {cat:20s}: {count:3d}")
-    print("="*50)
+    print("="*60)
+    print(f"Toplam Kanal: {len(channels)}\n")
+    print("Kategoriler:")
+    for cat, count in sorted(categories.items(), key=lambda x: -x[1])[:10]:
+        bar = "█" * (count // 5)
+        print(f"  {cat:20s}: {count:4d} {bar}")
+    print("="*60)
 
 def main():
     print("╔══════════════════════════════════════════════════╗")
@@ -216,11 +254,8 @@ def main():
     print("\n🌐 Harici M3U dosyaları yükleniyor...")
     external = load_external_m3u()
     
-    # 4. Birleştir ve tekrarları temizle
-    print("\n🔄 Kanallar birleştiriliyor...")
+    # 4. Birleştir
     all_channels = merge_and_deduplicate([existing, canlitv, external])
-    
-    print(f"\n✅ Toplam benzersiz kanal: {len(all_channels)}")
     
     # 5. Kaydet
     print("\n💾 Dosyalar kaydediliyor...")
@@ -231,11 +266,7 @@ def main():
     # 6. Özet
     print_summary(all_channels)
     
-    print("\n✅ İşlem tamamlandı!")
-    print("\n📤 Git ile yüklemek için:")
-    print("   git add .")
-    print('   git commit -m "Update channels"')
-    print("   git push")
+    print("\n✅ İşlem tamamlandı!\n")
 
 if __name__ == "__main__":
     main()
