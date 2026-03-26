@@ -49,3 +49,8 @@ jobs:
           else
             echo "No changes to commit"
           fi
+# .github/workflows/update_m3u.yml içine ekle
+
+- name: Update from new sources
+  run: |
+    python add_new_sources.py
