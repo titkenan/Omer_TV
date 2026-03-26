@@ -2,8 +2,8 @@ name: Update M3U
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
-  workflow_dispatch:
+    - cron: '0 */6 * * *'  # Her 6 saatte
+  workflow_dispatch:  # Manuel tetikleme
 
 permissions:
   contents: write
@@ -19,9 +19,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
       
-      - name: Pull Latest Changes
-        run: |
-          git pull origin main --rebase || true
+      - name: Pull Latest
+        run: git pull origin main --rebase || true
       
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -31,20 +30,16 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
       
-      - name: Run Scraper
-        run: python scripts/scraper.py
+      # ✅ YENİ: Temiz playlist oluştur
+      - name: Create Clean Playlist
+        run: python clean_and_organize.py
       
-      - name: Run Tester
-        run: python scripts/tester.py
-      
-      - name: Update from New Sources
-        run: python add_new_sources.py
-      
-      - name: Generate M3U
-        run: python scripts/generator.py
-      
-      - name: Generate Stats
-        run: python scripts/stats.py
+      # Mevcut scriptler (varsa çalıştır)
+      - name: Run Scraper (Optional)
+        run: |
+          if [ -f scripts/scraper.py ]; then
+            python scripts/scraper.py || true
+          fi
       
       - name: Commit and Push
         run: |
