@@ -1,0 +1,242 @@
+#!/usr/bin/env python3
+"""
+Ömer TV - Temiz ve Alternatifli Playlist
+Sadece Ulusal + Haber (seçilmiş kanallar)
+"""
+
+from datetime import datetime
+
+CHANNELS = """#EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"
+# ═══════════════════════════════════════════════════
+# ÖMER TV - Premium IPTV Playlist
+# Updated: {date}
+# Her kanal için 2-4 alternatif link mevcut
+# Biri çalışmazsa diğerini dene!
+# ═══════════════════════════════════════════════════
+
+#########################################
+# ULUSAL KANALLAR
+#########################################
+
+# ═══════════════════════════════════════
+# TRT 1 (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="TRT 1 [1]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/trt-1-tr.png" group-title="Ulusal",TRT 1 [1]
+https://tv-trt1.medya.trt.com.tr/master_1080.m3u8
+#EXTINF:-1 tvg-name="TRT 1 [2]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/trt-1-tr.png" group-title="Ulusal",TRT 1 [2]
+https://andro.okan9gote10sokan.cfd/checklist/androstreamlivetrt1.m3u8
+#EXTINF:-1 tvg-name="TRT 1 [3]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/trt-1-tr.png" group-title="Ulusal",TRT 1 [3]
+https://tv-trt1.medya.trt.com.tr/master.m3u8
+
+# ═══════════════════════════════════════
+# SHOW TV (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="Show TV [1]" tvg-logo="https://m.showtv.com.tr/assets/images/other/showtv_social_media.jpg" group-title="Ulusal",Show TV [1]
+https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8
+#EXTINF:-1 tvg-name="Show TV [2]" tvg-logo="https://m.showtv.com.tr/assets/images/other/showtv_social_media.jpg" group-title="Ulusal",Show TV [2]
+https://tatatam.trt1sultanfatihss.workers.dev/https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8
+#EXTINF:-1 tvg-name="Show TV [3]" tvg-logo="https://m.showtv.com.tr/assets/images/other/showtv_social_media.jpg" group-title="Ulusal",Show TV [3]
+https://ciner.daioncdn.net/showtv/showtv_720p.m3u8
+
+# ═══════════════════════════════════════
+# ATV (4 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="ATV [1]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/atv-tr.png" group-title="Ulusal",ATV [1]
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
+#EXTINF:-1 tvg-name="ATV [2]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/atv-tr.png" group-title="Ulusal",ATV [2]
+https://andro.okan9gote10sokan.cfd/checklist/androstreamliveatv.m3u8
+#EXTINF:-1 tvg-name="ATV [3]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/atv-tr.png" group-title="Ulusal",ATV [3]
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_720p.m3u8
+#EXTINF:-1 tvg-name="ATV [4]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/atv-tr.png" group-title="Ulusal",ATV [4]
+https://trkvz.daioncdn.net/atv/atv.m3u8
+
+# ═══════════════════════════════════════
+# KANAL D (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="Kanal D [1]" tvg-logo="https://turkey.mom-rsf.org/uploads/tx_lfrogmom/media/240-101_import.png" group-title="Ulusal",Kanal D [1]
+https://ackaxsqacw.turknet.ercdn.net/ozfkfbbjba/kanald/kanald_1080p.m3u8
+#EXTINF:-1 tvg-name="Kanal D [2]" tvg-logo="https://turkey.mom-rsf.org/uploads/tx_lfrogmom/media/240-101_import.png" group-title="Ulusal",Kanal D [2]
+https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8
+#EXTINF:-1 tvg-name="Kanal D [3]" tvg-logo="https://turkey.mom-rsf.org/uploads/tx_lfrogmom/media/240-101_import.png" group-title="Ulusal",Kanal D [3]
+https://demiroren.daioncdn.net/kanald/kanald_720p.m3u8
+
+# ═══════════════════════════════════════
+# STAR TV (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="Star TV [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/star-tv-tr.png" group-title="Ulusal",Star TV [1]
+https://dogus.daioncdn.net/startv/startv_1080p.m3u8
+#EXTINF:-1 tvg-name="Star TV [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/star-tv-tr.png" group-title="Ulusal",Star TV [2]
+https://dogus.daioncdn.net/startv/startv_720p.m3u8
+#EXTINF:-1 tvg-name="Star TV [3]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/star-tv-tr.png" group-title="Ulusal",Star TV [3]
+https://andro.okan9gote10sokan.cfd/checklist/androstreamlivestartv.m3u8
+
+# ═══════════════════════════════════════
+# FOX TV / NOW TV (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="FOX TV [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/fox-tr.png" group-title="Ulusal",FOX TV [1]
+https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv_1080p.m3u8
+#EXTINF:-1 tvg-name="FOX TV [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/fox-tr.png" group-title="Ulusal",FOX TV [2]
+https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv_720p.m3u8
+#EXTINF:-1 tvg-name="FOX TV [3]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/fox-tr.png" group-title="Ulusal",FOX TV [3]
+https://andro.okan9gote10sokan.cfd/checklist/androstreamlivefoxtv.m3u8
+
+# ═══════════════════════════════════════
+# TV8 (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="TV8 [1]" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png" group-title="Ulusal",TV8 [1]
+https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8/tv8_1080p.m3u8
+#EXTINF:-1 tvg-name="TV8 [2]" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png" group-title="Ulusal",TV8 [2]
+https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8/tv8_720p.m3u8
+#EXTINF:-1 tvg-name="TV8 [3]" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png" group-title="Ulusal",TV8 [3]
+https://andro.okan9gote10sokan.cfd/checklist/androstreamlivetv8.m3u8
+
+# ═══════════════════════════════════════
+# TV8.5 (2 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="TV8.5 [1]" tvg-logo="https://tvprofil.com/img/kanali-logo/TV_8.5_TR_logo_v2.png" group-title="Ulusal",TV8.5 [1]
+https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8bucuk/tv8bucuk_1080p.m3u8
+#EXTINF:-1 tvg-name="TV8.5 [2]" tvg-logo="https://tvprofil.com/img/kanali-logo/TV_8.5_TR_logo_v2.png" group-title="Ulusal",TV8.5 [2]
+https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8bucuk/tv8bucuk_720p.m3u8
+
+# ═══════════════════════════════════════
+# KANAL 7 (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="Kanal 7 [1]" tvg-logo="https://play-lh.googleusercontent.com/s029TvwR-pU-SIoJh2GcGIScm4LzsmuTTbwPSCtwIK_6aOOXjQwC6mcHeMrPDst2KYM" group-title="Ulusal",Kanal 7 [1]
+https://yurhnwtpys.turknet.ercdn.net/cvmbjbpmdx/kanal7/kanal7_1080p.m3u8
+#EXTINF:-1 tvg-name="Kanal 7 [2]" tvg-logo="https://play-lh.googleusercontent.com/s029TvwR-pU-SIoJh2GcGIScm4LzsmuTTbwPSCtwIK_6aOOXjQwC6mcHeMrPDst2KYM" group-title="Ulusal",Kanal 7 [2]
+https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
+#EXTINF:-1 tvg-name="Kanal 7 [3]" tvg-logo="https://play-lh.googleusercontent.com/s029TvwR-pU-SIoJh2GcGIScm4LzsmuTTbwPSCtwIK_6aOOXjQwC6mcHeMrPDst2KYM" group-title="Ulusal",Kanal 7 [3]
+https://yurhnwtpys.turknet.ercdn.net/cvmbjbpmdx/kanal7/kanal7_720p.m3u8
+
+# ═══════════════════════════════════════
+# BEYAZ TV (2 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="Beyaz TV [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/beyaz-tv-tr.png" group-title="Ulusal",Beyaz TV [1]
+https://beyaztv-live.daioncdn.net/beyaztv/beyaztv_1080p.m3u8
+#EXTINF:-1 tvg-name="Beyaz TV [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/beyaz-tv-tr.png" group-title="Ulusal",Beyaz TV [2]
+https://beyaztv-live.daioncdn.net/beyaztv/beyaztv_720p.m3u8
+
+# ═══════════════════════════════════════
+# A2 TV (2 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="A2 TV [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/a2-tr.png" group-title="Ulusal",A2 TV [1]
+http://89.187.191.41/A2-HD-TR/video.m3u8
+#EXTINF:-1 tvg-name="A2 TV [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/a2-tr.png" group-title="Ulusal",A2 TV [2]
+https://trkvz.daioncdn.net/a2/a2.m3u8
+
+# ═══════════════════════════════════════
+# 360 TV (2 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="360 TV [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/360-tr.png" group-title="Ulusal",360 TV [1]
+https://tv.ensonhaber.com/tv360/tv360.m3u8
+#EXTINF:-1 tvg-name="360 TV [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/360-tr.png" group-title="Ulusal",360 TV [2]
+https://mn-nl.mncdn.com/tv360_live/live.m3u8
+
+# ═══════════════════════════════════════
+# TEVE2 (2 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="Teve2 [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/teve2-tr.png" group-title="Ulusal",Teve2 [1]
+https://demiroren.daioncdn.net/teve2/teve2_1080p.m3u8
+#EXTINF:-1 tvg-name="Teve2 [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/teve2-tr.png" group-title="Ulusal",Teve2 [2]
+https://demiroren.daioncdn.net/teve2/teve2_720p.m3u8
+
+#########################################
+# HABER KANALLARI
+#########################################
+
+# ═══════════════════════════════════════
+# HABER TÜRK (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="Habertürk [1]" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Habert%C3%BCrk_logo.svg/1200px-Habert%C3%BCrk_logo.svg.png" group-title="Haber",Habertürk [1]
+https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3u8
+#EXTINF:-1 tvg-name="Habertürk [2]" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Habert%C3%BCrk_logo.svg/1200px-Habert%C3%BCrk_logo.svg.png" group-title="Haber",Habertürk [2]
+https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_720p.m3u8
+#EXTINF:-1 tvg-name="Habertürk [3]" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Habert%C3%BCrk_logo.svg/1200px-Habert%C3%BCrk_logo.svg.png" group-title="Haber",Habertürk [3]
+https://ciner.daioncdn.net/haberturktv/haberturktv.m3u8
+
+# ═══════════════════════════════════════
+# CNN TÜRK (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="CNN Türk [1]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/cnn-turk-tr.png" group-title="Haber",CNN Türk [1]
+https://demiroren.daioncdn.net/cnnturk/cnnturk_1080p.m3u8
+#EXTINF:-1 tvg-name="CNN Türk [2]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/cnn-turk-tr.png" group-title="Haber",CNN Türk [2]
+https://demiroren.daioncdn.net/cnnturk/cnnturk_720p.m3u8
+#EXTINF:-1 tvg-name="CNN Türk [3]" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/cnn-turk-tr.png" group-title="Haber",CNN Türk [3]
+https://live.duhnet.tv/hls/cnnturk.m3u8
+
+# ═══════════════════════════════════════
+# NTV (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="NTV [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/ntv-tr.png" group-title="Haber",NTV [1]
+https://dogus.daioncdn.net/ntv/ntv_1080p.m3u8
+#EXTINF:-1 tvg-name="NTV [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/ntv-tr.png" group-title="Haber",NTV [2]
+https://dogus.daioncdn.net/ntv/ntv_720p.m3u8
+#EXTINF:-1 tvg-name="NTV [3]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/ntv-tr.png" group-title="Haber",NTV [3]
+https://tatatam.trt1sultanfatihss.workers.dev/http://dogus.daioncdn.net/ntv/ntv_1080p.m3u8
+
+# ═══════════════════════════════════════
+# A HABER (3 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="A Haber [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/a-haber-tr.png" group-title="Haber",A Haber [1]
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber_1080p.m3u8
+#EXTINF:-1 tvg-name="A Haber [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/a-haber-tr.png" group-title="Haber",A Haber [2]
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber_720p.m3u8
+#EXTINF:-1 tvg-name="A Haber [3]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/a-haber-tr.png" group-title="Haber",A Haber [3]
+https://trkvz.daioncdn.net/ahaber/ahaber.m3u8
+
+# ═══════════════════════════════════════
+# TV100 (2 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="TV100 [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/tv100-tr.png" group-title="Haber",TV100 [1]
+https://live.duhnet.tv/hls/tv100.m3u8
+#EXTINF:-1 tvg-name="TV100 [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/tv100-tr.png" group-title="Haber",TV100 [2]
+https://andro.okan9gote10sokan.cfd/checklist/androstreamlivetv100.m3u8
+
+# ═══════════════════════════════════════
+# ÜLKE TV (2 Alternatif)
+# ═══════════════════════════════════════
+#EXTINF:-1 tvg-name="Ülke TV [1]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/ulke-tv-tr.png" group-title="Haber",Ülke TV [1]
+https://live.artımedya.com/ulketv/playlist.m3u8
+#EXTINF:-1 tvg-name="Ülke TV [2]" tvg-logo="https://gitlatte.github.io/m3ueditor/images/kanal-gorselleri/turkiye/ulke-tv-tr.png" group-title="Haber",Ülke TV [2]
+https://mn-nl.mncdn.com/ulketv_live/live.m3u8
+"""
+
+def create_playlist():
+    content = CHANNELS.format(date=datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"))
+    
+    with open('channels.m3u', 'w', encoding='utf-8') as f:
+        f.write(content)
+    
+    channel_count = content.count('#EXTINF')
+    
+    print(f"""
+╔══════════════════════════════════════════════════╗
+║       ✅ channels.m3u OLUŞTURULDU!              ║
+╠══════════════════════════════════════════════════╣
+║                                                  ║
+║  📺 Toplam: {channel_count} kanal (alternatifli)           ║
+║                                                  ║
+║  📁 ULUSAL (13 kanal):                          ║
+║     TRT 1, Show TV, ATV, Kanal D, Star TV       ║
+║     FOX TV, TV8, TV8.5, Kanal 7, Beyaz TV       ║
+║     A2 TV, 360 TV, Teve2                        ║
+║                                                  ║
+║  📰 HABER (6 kanal):                            ║
+║     Habertürk, CNN Türk, NTV                    ║
+║     A Haber, TV100, Ülke TV                     ║
+║                                                  ║
+║  ❌ ÇIKARILANLAR:                               ║
+║     Flash TV, Sözcü TV, Halk TV                 ║
+║     Bloomberg HT, Tele1                         ║
+║     Sinema, Çocuk, Müzik, Belgesel              ║
+║     Spor, Dini, TRT kanalları                   ║
+║                                                  ║
+╚══════════════════════════════════════════════════╝
+""")
+
+if __name__ == "__main__":
+    create_playlist()
+    print("📤 GitHub'a yükle:")
+    print("   git add channels.m3u")
+    print('   git commit -m "🎯 Ulusal+Haber (temizlenmiş)"')
+    print("   git push origin main")
