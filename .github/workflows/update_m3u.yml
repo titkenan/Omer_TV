@@ -17,6 +17,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update from new sources
+      run: |
+        python add_new_sources.py
       
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -50,7 +54,3 @@ jobs:
             echo "No changes to commit"
           fi
 # .github/workflows/update_m3u.yml içine ekle
-
-- name: Update from new sources
-  run: |
-    python add_new_sources.py
