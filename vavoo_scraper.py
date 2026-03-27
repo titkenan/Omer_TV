@@ -10,7 +10,7 @@ from datetime import datetime
 import os
 
 # ÖNEMLİ: Kendi Cloudflare Worker URL'ini buraya yaz!
-CLOUDFLARE_WORKER = "https://turkish-proxy.YOURNAME.workers.dev"
+CLOUDFLARE_WORKER = "https://omer-proxy.mmeindl06.workers.dev/"
 
 # Hedef URL
 VAVOO_SOURCE = "https://rideordie.serv00.net/iptv/vavoo/tr.php"
