@@ -1,0 +1,52 @@
+name: Update Vavoo (ProtonVPN)
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install Dependencies
+        run: |
+          pip install requests
+          sudo apt-get update
+          sudo apt-get install -y openvpn wget
+      
+      - name: Setup Turkish VPN
+        run: |
+          # ProtonVPN ücretsiz TR config indir
+          wget -O turkey.ovpn "https://api.protonmail.ch/vpn/config?Platform=linux&Protocol=udp&Country=TR"
+          
+          # VPN'i arka planda başlat
+          sudo openvpn --config turkey.ovpn --daemon
+          
+          # 10 saniye bekle
+          sleep 10
+          
+          # IP'yi kontrol et
+          curl ifconfig.me
+      
+      - name: Run Scraper
+        run: python vavoo_scraper.py
+      
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add channels.m3u
+          git commit -m "🔄 Vavoo güncellendi"
+          git push
