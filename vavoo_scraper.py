@@ -1,112 +1,116 @@
 #!/usr/bin/env python3
 """
-Vavoo Scraper - Cloudflare Worker ile
-Stabil ve otomatik güncellenen sistem
+Vavoo Scraper - Ücretsiz Türk Proxy ile
 """
 
 import requests
 import re
 from datetime import datetime
-import os
+import time
 
-# Cloudflare Worker URL
-CLOUDFLARE_WORKER = "https://omer-proxy.mmeindl06.workers.dev"
-
-# Hedef URL
 VAVOO_SOURCE = "https://rideordie.serv00.net/iptv/vavoo/tr.php"
 
-def fetch_via_worker(url):
-    """Cloudflare Worker üzerinden fetch"""
+def get_turkish_proxies():
+    """Güncel Türk proxy'leri çek"""
     
-    worker_url = f"{CLOUDFLARE_WORKER}?url={url}"
+    proxies = []
     
-    print(f"📡 Cloudflare Worker üzerinden çekiliyor...")
-    print(f"   Worker: {CLOUDFLARE_WORKER}")
-    print(f"   Hedef: {url}")
+    # API'den Türk proxy listesi al
+    sources = [
+        "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=10000&country=TR&ssl=all&anonymity=all",
+        "https://www.proxy-list.download/api/v1/get?type=http&anon=elite&country=TR",
+    ]
     
-    try:
-        response = requests.get(worker_url, timeout=30)
-        
-        if response.status_code == 200:
-            print(f"   ✅ Başarılı! ({len(response.text):,} byte)")
-            return response.text
-        else:
-            print(f"   ❌ HTTP {response.status_code}")
-            print(f"   Response: {response.text[:200]}")
-            return None
+    for source_url in sources:
+        try:
+            print(f"📡 Proxy listesi çekiliyor: {source_url.split('/')[2]}")
+            response = requests.get(source_url, timeout=10)
             
-    except Exception as e:
-        print(f"   ❌ Hata: {e}")
-        return None
+            if response.status_code == 200:
+                lines = response.text.strip().split('\n')
+                for line in lines[:5]:  # İlk 5 proxy
+                    if line and ':' in line:
+                        ip_port = line.strip()
+                        proxies.append({
+                            'http': f'http://{ip_port}',
+                            'https': f'http://{ip_port}'
+                        })
+                        print(f"   ✅ {ip_port}")
+        except Exception as e:
+            print(f"   ❌ {e}")
+    
+    return proxies
+
+def fetch_via_proxy(url, proxies):
+    """Proxy'lerle sırayla dene"""
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'Accept-Language': 'tr-TR,tr;q=0.9',
+    }
+    
+    for i, proxy in enumerate(proxies, 1):
+        try:
+            print(f"\n🔄 Proxy {i}/{len(proxies)} deneniyor: {proxy['http'][:30]}...")
+            
+            response = requests.get(url, headers=headers, proxies=proxy, timeout=15)
+            
+            if response.status_code == 200 and len(response.text) > 5000:
+                print(f"   ✅ BAŞARILI! ({len(response.text):,} byte)")
+                return response.text
+            else:
+                print(f"   ❌ HTTP {response.status_code} veya küçük içerik")
+                
+        except Exception as e:
+            print(f"   ❌ {str(e)[:50]}")
+            continue
+        
+        time.sleep(2)
+    
+    return None
 
 def parse_vavoo_html(html):
     """HTML'den kanalları çıkar"""
     
-    # M3U pattern
     pattern = r'#EXTINF:-1 tvg-name="([^"]+)"[^\n]*\n(https://[^\n]+)'
     matches = re.findall(pattern, html)
     
     print(f"\n🔍 {len(matches)} kanal bulundu")
     
     channels = []
-    
     for name, url in matches:
         name = name.strip()
-        
-        # Kategori belirle
         category = auto_categorize(name)
-        
-        channels.append({
-            'name': name,
-            'url': url,
-            'category': category
-        })
+        channels.append({'name': name, 'url': url, 'category': category})
     
     return channels
 
 def auto_categorize(name):
-    """Otomatik kategori belirle"""
+    """Kategori belirle"""
     n = name.lower()
     
-    # Ulusal
-    if any(x in n for x in ['trt 1', 'trt1', 'show', 'star', 'atv', 'kanal d', 'kanald', 'tv8', 'tv 8', 'kanal 7', 'kanal7', 'fox', 'now', 'beyaz', 'teve', '360', 'a2', 'euro']):
+    if any(x in n for x in ['trt 1', 'show', 'star', 'atv', 'kanal d', 'tv8', 'kanal 7', 'fox', 'beyaz', 'teve', '360', 'a2']):
         return 'Ulusal'
-    
-    # Haber
-    elif any(x in n for x in ['haber', 'cnn', 'ntv', 'tgrt', '24', 'ulke', 'sozcu', 'tv100', 'tvnet', 'ekol', 'lider']):
+    elif any(x in n for x in ['haber', 'cnn', 'ntv', 'tgrt', 'ulke', 'sozcu']):
         return 'Haber'
-    
-    # Spor
-    elif any(x in n for x in ['spor', 'sport', 'bein', 's sport', 'tabii', 'exxen', 'tivibu', 'eurosport', 'nba', 'idman']):
+    elif any(x in n for x in ['spor', 'sport', 'bein', 'exxen', 'tabii']):
         return 'Spor'
-    
-    # Sinema
-    elif any(x in n for x in ['sinema', 'cinema', 'film', 'movie', 'box', 'fix', 'sinemax']):
+    elif any(x in n for x in ['sinema', 'cinema', 'film']):
         return 'Sinema'
-    
-    # Dizi
-    elif any(x in n for x in ['dizi', 'series', 'epic']):
+    elif any(x in n for x in ['dizi', 'series']):
         return 'Dizi'
-    
-    # Belgesel
-    elif any(x in n for x in ['belgesel', 'nat geo', 'national', 'discovery', 'dmax', 'bbc', 'tlc', 'history', 'viasat']):
+    elif any(x in n for x in ['belgesel', 'nat geo', 'discovery', 'dmax']):
         return 'Belgesel'
-    
-    # Çocuk
-    elif any(x in n for x in ['cocuk', 'çocuk', 'minika', 'cartoon', 'disney', 'baby', 'nick', 'boomerang', 'caillou']):
+    elif any(x in n for x in ['cocuk', 'çocuk', 'minika', 'cartoon']):
         return 'Çocuk'
-    
-    # Müzik
-    elif any(x in n for x in ['muzik', 'müzik', 'music', 'kral', 'power', 'dream', 'number']):
+    elif any(x in n for x in ['muzik', 'müzik', 'kral']):
         return 'Müzik'
-    
     else:
         return 'Genel'
 
 def create_m3u(channels):
     """M3U dosyası oluştur"""
     
-    # Kategorilere ayır
     categories = {}
     for ch in channels:
         cat = ch['category']
@@ -114,50 +118,49 @@ def create_m3u(channels):
             categories[cat] = []
         categories[cat].append(ch)
     
-    # İstatistik
     print("\n📊 Kategoriler:")
-    total = 0
     for cat in sorted(categories.keys()):
-        count = len(categories[cat])
-        print(f"   {cat:15s}: {count:3d} kanal")
-        total += count
+        print(f"   {cat:15s}: {len(categories[cat]):3d}")
     
-    # M3U içeriği
     content = '#EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"\n'
-    content += f'# ÖMER TV - Vavoo Premium\n'
+    content += f'# ÖMER TV - Vavoo\n'
     content += f'# Güncelleme: {datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")}\n'
-    content += f'# Toplam: {total} kanal\n'
-    content += f'# Kaynak: Vavoo (via Cloudflare Worker)\n\n'
+    content += f'# Toplam: {len(channels)} kanal\n\n'
     
-    # Kategori sırası
     order = ['Ulusal', 'Haber', 'Spor', 'Sinema', 'Dizi', 'Belgesel', 'Çocuk', 'Müzik', 'Genel']
     
     for cat in order:
         if cat in categories:
-            content += f'\n#########################################\n'
-            content += f'# {cat.upper()} ({len(categories[cat])} kanal)\n'
-            content += f'#########################################\n\n'
-            
+            content += f'\n### {cat.upper()} ({len(categories[cat])} kanal) ###\n\n'
             for ch in sorted(categories[cat], key=lambda x: x['name']):
                 content += f'#EXTINF:-1 group-title="{cat}",{ch["name"]}\n'
                 content += f'{ch["url"]}\n'
     
-    # Kaydet
     with open('channels.m3u', 'w', encoding='utf-8') as f:
         f.write(content)
     
-    print(f"\n✅ channels.m3u oluşturuldu ({total} kanal)")
+    print(f"\n✅ channels.m3u oluşturuldu ({len(channels)} kanal)")
 
 def main():
     print("=" * 60)
-    print("VAVOO SCRAPER - Cloudflare Worker Edition")
+    print("VAVOO SCRAPER - Türk Proxy Edition")
     print("=" * 60)
     
-    # 1. HTML çek
-    html = fetch_via_worker(VAVOO_SOURCE)
+    # 1. Türk proxy'leri al
+    print("\n📡 Türk proxy'ler alınıyor...\n")
+    proxies = get_turkish_proxies()
+    
+    if not proxies:
+        print("\n❌ Hiç proxy bulunamadı!")
+        return
+    
+    print(f"\n✅ {len(proxies)} proxy hazır")
+    
+    # 2. HTML çek
+    html = fetch_via_proxy(VAVOO_SOURCE, proxies)
     
     if not html:
-        print("\n❌ HTML çekilemedi! Worker'ı kontrol et.")
+        print("\n❌ Tüm proxy'ler başarısız oldu!")
         return
     
     # Debug kaydet
@@ -165,18 +168,17 @@ def main():
         f.write(html)
     print("💾 debug_vavoo.html kaydedildi")
     
-    # 2. Parse et
+    # 3. Parse et
     channels = parse_vavoo_html(html)
     
     if not channels:
-        print("\n❌ Hiç kanal bulunamadı!")
+        print("❌ Kanal bulunamadı!")
         return
     
-    # 3. M3U oluştur
+    # 4. M3U oluştur
     create_m3u(channels)
     
-    print("\n🎉 İşlem tamamlandı!")
-    print(f"🔗 https://raw.githubusercontent.com/titkenan/Omer_TV/main/channels.m3u")
+    print("\n🎉 Başarıyla tamamlandı!")
 
 if __name__ == "__main__":
     main()
