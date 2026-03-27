@@ -1,0 +1,37 @@
+# .github/workflows/vavoo_scraper.yml
+name: Vavoo Scraper
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install Dependencies
+        run: pip install requests
+      
+      # Türk VPN/Proxy kur
+      - name: Setup Turkish Proxy
+        run: |
+          # Ücretsiz Türk proxy kullan
+          export HTTP_PROXY="http://88.255.102.120:8080"
+          export HTTPS_PROXY="http://88.255.102.120:8080"
+      
+      - name: Scrape Vavoo
+        run: python vavoo_scraper.py
+      
+      - name: Commit
+        run: |
+          git add channels.m3u
+          git commit -m "🔄 Vavoo güncellendi"
+          git push
