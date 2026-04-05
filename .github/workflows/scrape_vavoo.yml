@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -33,7 +35,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/vavoo_channels.json vavoo_channels.m3u debug_vavoo.html
           if ! git diff --staged --quiet; then
-            git commit -m "🔄 Vavoo güncellendi $(date +'%Y-%m-%d')"
-            git pull --rebase origin main
-            git push
+            git commit -m "🔄 Vavoo güncellendi $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push --force origin main
           fi
