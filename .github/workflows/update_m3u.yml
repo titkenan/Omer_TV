@@ -34,8 +34,7 @@ jobs:
           git add channels.m3u debug_vavoo.html
           if ! git diff --staged --quiet; then
             git commit -m "🔄 Vavoo güncellendi - $(date +'%Y-%m-%d %H:%M UTC')"
-            git pull --rebase origin main
-            git push
+            git push --force origin main
           else
             echo "Değişiklik yok"
           fi
