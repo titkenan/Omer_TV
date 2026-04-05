@@ -24,10 +24,10 @@ jobs:
           python-version: '3.11'
       
       - name: Install Dependencies
-        run: pip install requests
+        run: pip install -r requirements.txt
       
-      - name: Update Channels
-        run: python update_channels.py
+      - name: Update Playlist
+        run: python update_playlist.py
       
       - name: Commit Results
         run: |
@@ -35,6 +35,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           if ! git diff --staged --quiet; then
-            git commit -m "🔄 Channels güncellendi - $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git commit -m "🔄 Playlist güncellendi - $(date -u +'%Y-%m-%d %H:%M') UTC"
             git push --force origin main
           fi
