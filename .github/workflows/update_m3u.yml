@@ -1,20 +1,22 @@
-name: Update Vavoo Playlist
+name: Update M3U
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Her 6 saatte
-  workflow_dispatch:  # Manuel tetikleme
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  scrape:
+  update:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -24,17 +26,15 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
       
-      - name: Run Vavoo Scraper
-        run: python vavoo_scraper.py
+      - name: Update Channels
+        run: python update_channels.py
       
-      - name: Commit and Push
+      - name: Commit Results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add channels.m3u debug_vavoo.html
+          git add -A
           if ! git diff --staged --quiet; then
-            git commit -m "🔄 Vavoo güncellendi - $(date +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "🔄 Channels güncellendi - $(date -u +'%Y-%m-%d %H:%M') UTC"
             git push --force origin main
-          else
-            echo "Değişiklik yok"
           fi
