@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"
 # ÖMER TV - Vavoo
-# Güncelleme: 2026-04-07 00:01 UTC
+# Güncelleme: 2026-04-07 03:32 UTC
 # Toplam: 1233 kanal
 
 
@@ -683,9 +683,9 @@ https://www.vavoo.to/play/1771511397/index.m3u8
 #EXTINF:-1 group-title="Spor",SPOR SMART 1
 https://www.vavoo.to/play/3278735965/index.m3u8
 #EXTINF:-1 group-title="Spor",SPOR SMART 2
-https://www.vavoo.to/play/2228088973/index.m3u8
-#EXTINF:-1 group-title="Spor",SPOR SMART 2
 https://www.vavoo.to/play/907165095/index.m3u8
+#EXTINF:-1 group-title="Spor",SPOR SMART 2
+https://www.vavoo.to/play/2228088973/index.m3u8
 #EXTINF:-1 group-title="Spor",SPOR SMART 2 HD
 https://www.vavoo.to/play/2726496671/index.m3u8
 #EXTINF:-1 group-title="Spor",SPOR SMART FHD
@@ -894,9 +894,9 @@ https://www.vavoo.to/play/3079995901/index.m3u8
 #EXTINF:-1 group-title="Belgesel",DISCOVERY CHANNEL HD+
 https://www.vavoo.to/play/695705778/index.m3u8
 #EXTINF:-1 group-title="Belgesel",DISCOVERY ID
-https://www.vavoo.to/play/972730032/index.m3u8
-#EXTINF:-1 group-title="Belgesel",DISCOVERY ID
 https://www.vavoo.to/play/2095404060/index.m3u8
+#EXTINF:-1 group-title="Belgesel",DISCOVERY ID
+https://www.vavoo.to/play/972730032/index.m3u8
 #EXTINF:-1 group-title="Belgesel",DISCOVERY IDX HD
 https://www.vavoo.to/play/970098662/index.m3u8
 #EXTINF:-1 group-title="Belgesel",DISCOVERY SCIENCE
@@ -955,9 +955,9 @@ https://www.vavoo.to/play/4277750275/index.m3u8
 #EXTINF:-1 group-title="Çocuk",SMART COCUK HD
 https://www.vavoo.to/play/813574895/index.m3u8
 #EXTINF:-1 group-title="Çocuk",TRT COCUK
-https://www.vavoo.to/play/792228122/index.m3u8
-#EXTINF:-1 group-title="Çocuk",TRT COCUK
 https://www.vavoo.to/play/685794830/index.m3u8
+#EXTINF:-1 group-title="Çocuk",TRT COCUK
+https://www.vavoo.to/play/792228122/index.m3u8
 #EXTINF:-1 group-title="Çocuk",TRT COCUK RAW
 https://www.vavoo.to/play/3979837190/index.m3u8
 #EXTINF:-1 group-title="Çocuk",TRT DIYANET COCUK
