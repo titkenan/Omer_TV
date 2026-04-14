@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"
 # ÖMER TV - Vavoo
-# Güncelleme: 2026-04-14 03:45 UTC
+# Güncelleme: 2026-04-14 09:44 UTC
 # Toplam: 1230 kanal
 
 
@@ -83,9 +83,9 @@ https://www.vavoo.to/play/2500913164/index.m3u8
 #EXTINF:-1 group-title="Ulusal",BEYAZ HD+ SD
 https://www.vavoo.to/play/1020985035/index.m3u8
 #EXTINF:-1 group-title="Ulusal",BEYAZ TV
-https://www.vavoo.to/play/3418237531/index.m3u8
-#EXTINF:-1 group-title="Ulusal",BEYAZ TV
 https://www.vavoo.to/play/275850888/index.m3u8
+#EXTINF:-1 group-title="Ulusal",BEYAZ TV
+https://www.vavoo.to/play/3418237531/index.m3u8
 #EXTINF:-1 group-title="Ulusal",BEYAZ TV FHD
 https://www.vavoo.to/play/1600348811/index.m3u8
 #EXTINF:-1 group-title="Ulusal",BEYAZ TV HD
@@ -117,9 +117,9 @@ https://www.vavoo.to/play/3015649982/index.m3u8
 #EXTINF:-1 group-title="Ulusal",KANAL 7
 https://www.vavoo.to/play/2842046019/index.m3u8
 #EXTINF:-1 group-title="Ulusal",KANAL 7 AVRUPA
-https://www.vavoo.to/play/498645977/index.m3u8
-#EXTINF:-1 group-title="Ulusal",KANAL 7 AVRUPA
 https://www.vavoo.to/play/916532487/index.m3u8
+#EXTINF:-1 group-title="Ulusal",KANAL 7 AVRUPA
+https://www.vavoo.to/play/498645977/index.m3u8
 #EXTINF:-1 group-title="Ulusal",KANAL 7 EUROPA
 https://www.vavoo.to/play/3264983364/index.m3u8
 #EXTINF:-1 group-title="Ulusal",KANAL 7 FHD
@@ -248,9 +248,9 @@ https://www.vavoo.to/play/603651638/index.m3u8
 #EXTINF:-1 group-title="Haber",64 KARE ULKESI
 https://www.vavoo.to/play/3842003262/index.m3u8
 #EXTINF:-1 group-title="Haber",A HABER
-https://www.vavoo.to/play/1596095882/index.m3u8
-#EXTINF:-1 group-title="Haber",A HABER
 https://www.vavoo.to/play/1174108535/index.m3u8
+#EXTINF:-1 group-title="Haber",A HABER
+https://www.vavoo.to/play/1596095882/index.m3u8
 #EXTINF:-1 group-title="Haber",A HABER HD
 https://www.vavoo.to/play/535272601/index.m3u8
 #EXTINF:-1 group-title="Haber",A HABER HEVC
@@ -397,9 +397,9 @@ https://www.vavoo.to/play/2919229346/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN BOX OFFICE 1
 https://www.vavoo.to/play/1320363850/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN BOX OFFICE 2
-https://www.vavoo.to/play/152264090/index.m3u8
-#EXTINF:-1 group-title="Spor",BEIN BOX OFFICE 2
 https://www.vavoo.to/play/3910129702/index.m3u8
+#EXTINF:-1 group-title="Spor",BEIN BOX OFFICE 2
+https://www.vavoo.to/play/152264090/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN BOX OFFICE 3
 https://www.vavoo.to/play/879981610/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN BOX OFFICE 3
@@ -415,27 +415,27 @@ https://www.vavoo.to/play/1691223078/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN IZ TV
 https://www.vavoo.to/play/3156178359/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION
-https://www.vavoo.to/play/1873478131/index.m3u8
-#EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION
 https://www.vavoo.to/play/3041245607/index.m3u8
-#EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION 2
-https://www.vavoo.to/play/650851542/index.m3u8
+#EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION
+https://www.vavoo.to/play/1873478131/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION 2
 https://www.vavoo.to/play/2617318386/index.m3u8
+#EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION 2
+https://www.vavoo.to/play/650851542/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES FAMILY
 https://www.vavoo.to/play/2485199152/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES PREMIERE
-https://www.vavoo.to/play/942987224/index.m3u8
-#EXTINF:-1 group-title="Spor",BEIN MOVIES PREMIERE
 https://www.vavoo.to/play/2197747964/index.m3u8
+#EXTINF:-1 group-title="Spor",BEIN MOVIES PREMIERE
+https://www.vavoo.to/play/942987224/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES PREMIERE 2
 https://www.vavoo.to/play/2120218356/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES PREMIERE 2
 https://www.vavoo.to/play/2244069093/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES TURK
-https://www.vavoo.to/play/1835579025/index.m3u8
-#EXTINF:-1 group-title="Spor",BEIN MOVIES TURK
 https://www.vavoo.to/play/3390575948/index.m3u8
+#EXTINF:-1 group-title="Spor",BEIN MOVIES TURK
+https://www.vavoo.to/play/1835579025/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN SERIES 1
 https://www.vavoo.to/play/2190922298/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN SERIES 2
@@ -483,9 +483,9 @@ https://www.vavoo.to/play/3236362911/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN SPORTS 2 UHD
 https://www.vavoo.to/play/3694662475/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN SPORTS 3
-https://www.vavoo.to/play/2834514943/index.m3u8
-#EXTINF:-1 group-title="Spor",BEIN SPORTS 3
 https://www.vavoo.to/play/1797459602/index.m3u8
+#EXTINF:-1 group-title="Spor",BEIN SPORTS 3
+https://www.vavoo.to/play/2834514943/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN SPORTS 3 HD
 https://www.vavoo.to/play/1700595801/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN SPORTS 3 SD
@@ -986,9 +986,9 @@ https://www.vavoo.to/play/2879812830/index.m3u8
 #EXTINF:-1 group-title="Müzik",MAYMUNLAR KRALI KONG
 https://www.vavoo.to/play/1536461938/index.m3u8
 #EXTINF:-1 group-title="Müzik",TRT MUZIK
-https://www.vavoo.to/play/2332789634/index.m3u8
-#EXTINF:-1 group-title="Müzik",TRT MUZIK
 https://www.vavoo.to/play/2362678422/index.m3u8
+#EXTINF:-1 group-title="Müzik",TRT MUZIK
+https://www.vavoo.to/play/2332789634/index.m3u8
 #EXTINF:-1 group-title="Müzik",TRT MUZIK HD+
 https://www.vavoo.to/play/3063329534/index.m3u8
 #EXTINF:-1 group-title="Müzik",TRT MUZIK RAW
@@ -1487,11 +1487,11 @@ https://www.vavoo.to/play/1713907990/index.m3u8
 #EXTINF:-1 group-title="Genel",DREAM SAVAS
 https://www.vavoo.to/play/1155291490/index.m3u8
 #EXTINF:-1 group-title="Genel",DREAM TURK
-https://www.vavoo.to/play/712098411/index.m3u8
-#EXTINF:-1 group-title="Genel",DREAM TURK
 https://www.vavoo.to/play/1621026196/index.m3u8
 #EXTINF:-1 group-title="Genel",DREAM TURK
 https://www.vavoo.to/play/678794615/index.m3u8
+#EXTINF:-1 group-title="Genel",DREAM TURK
+https://www.vavoo.to/play/712098411/index.m3u8
 #EXTINF:-1 group-title="Genel",DREAM TURK (BACKUP)
 https://www.vavoo.to/play/2557090695/index.m3u8
 #EXTINF:-1 group-title="Genel",DREAM TV
