@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"
 # ÖMER TV - Vavoo
-# Güncelleme: 2026-04-15 06:18 UTC
+# Güncelleme: 2026-04-15 11:07 UTC
 # Toplam: 1228 kanal
 
 
@@ -51,9 +51,9 @@ https://www.vavoo.to/play/1905749779/index.m3u8
 #EXTINF:-1 group-title="Ulusal",A2 TV SD
 https://www.vavoo.to/play/1835847966/index.m3u8
 #EXTINF:-1 group-title="Ulusal",ATV
-https://www.vavoo.to/play/1255594337/index.m3u8
-#EXTINF:-1 group-title="Ulusal",ATV
 https://www.vavoo.to/play/455930425/index.m3u8
+#EXTINF:-1 group-title="Ulusal",ATV
+https://www.vavoo.to/play/1255594337/index.m3u8
 #EXTINF:-1 group-title="Ulusal",ATV ALANYA
 https://www.vavoo.to/play/930209556/index.m3u8
 #EXTINF:-1 group-title="Ulusal",ATV AVRUPA
@@ -113,9 +113,9 @@ https://www.vavoo.to/play/3357052453/index.m3u8
 #EXTINF:-1 group-title="Ulusal",KANAL 360 UHD
 https://www.vavoo.to/play/3488532244/index.m3u8
 #EXTINF:-1 group-title="Ulusal",KANAL 7
-https://www.vavoo.to/play/3015649982/index.m3u8
-#EXTINF:-1 group-title="Ulusal",KANAL 7
 https://www.vavoo.to/play/2842046019/index.m3u8
+#EXTINF:-1 group-title="Ulusal",KANAL 7
+https://www.vavoo.to/play/3015649982/index.m3u8
 #EXTINF:-1 group-title="Ulusal",KANAL 7 AVRUPA
 https://www.vavoo.to/play/498645977/index.m3u8
 #EXTINF:-1 group-title="Ulusal",KANAL 7 AVRUPA
@@ -1615,9 +1615,9 @@ https://www.vavoo.to/play/2663765748/index.m3u8
 #EXTINF:-1 group-title="Genel",FLASH TV HD
 https://www.vavoo.to/play/2027331096/index.m3u8
 #EXTINF:-1 group-title="Genel",FM TV
-https://www.vavoo.to/play/4253863829/index.m3u8
-#EXTINF:-1 group-title="Genel",FM TV
 https://www.vavoo.to/play/1285510370/index.m3u8
+#EXTINF:-1 group-title="Genel",FM TV
+https://www.vavoo.to/play/4253863829/index.m3u8
 #EXTINF:-1 group-title="Genel",FMTV
 https://www.vavoo.to/play/3681963823/index.m3u8
 #EXTINF:-1 group-title="Genel",FX
@@ -1867,9 +1867,9 @@ https://www.vavoo.to/play/4190426847/index.m3u8
 #EXTINF:-1 group-title="Genel",LINE TV
 https://www.vavoo.to/play/1865892469/index.m3u8
 #EXTINF:-1 group-title="Genel",LOVE NATURE
-https://www.vavoo.to/play/2520793577/index.m3u8
-#EXTINF:-1 group-title="Genel",LOVE NATURE
 https://www.vavoo.to/play/2593800839/index.m3u8
+#EXTINF:-1 group-title="Genel",LOVE NATURE
+https://www.vavoo.to/play/2520793577/index.m3u8
 #EXTINF:-1 group-title="Genel",LOVE NATURE HD
 https://www.vavoo.to/play/3309481234/index.m3u8
 #EXTINF:-1 group-title="Genel",LOVE NATURE HD+
@@ -1993,9 +1993,9 @@ https://www.vavoo.to/play/503443750/index.m3u8
 #EXTINF:-1 group-title="Genel",NILOYA HD+
 https://www.vavoo.to/play/692811579/index.m3u8
 #EXTINF:-1 group-title="Genel",NILOYA TV
-https://www.vavoo.to/play/757435988/index.m3u8
-#EXTINF:-1 group-title="Genel",NILOYA TV
 https://www.vavoo.to/play/2728276611/index.m3u8
+#EXTINF:-1 group-title="Genel",NILOYA TV
+https://www.vavoo.to/play/757435988/index.m3u8
 #EXTINF:-1 group-title="Genel",NOW
 https://www.vavoo.to/play/3105184056/index.m3u8
 #EXTINF:-1 group-title="Genel",NOW TV FHD
