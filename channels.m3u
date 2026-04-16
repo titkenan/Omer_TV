@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"
 # ÖMER TV - Vavoo
-# Güncelleme: 2026-04-16 00:09 UTC
+# Güncelleme: 2026-04-16 03:48 UTC
 # Toplam: 1226 kanal
 
 
@@ -747,9 +747,9 @@ https://www.vavoo.to/play/3746683810/index.m3u8
 #EXTINF:-1 group-title="Spor",TIVIBU SPOR 2 HD
 https://www.vavoo.to/play/4151534486/index.m3u8
 #EXTINF:-1 group-title="Spor",TIVIBU SPOR 3
-https://www.vavoo.to/play/3794924050/index.m3u8
-#EXTINF:-1 group-title="Spor",TIVIBU SPOR 3
 https://www.vavoo.to/play/568442751/index.m3u8
+#EXTINF:-1 group-title="Spor",TIVIBU SPOR 3
+https://www.vavoo.to/play/3794924050/index.m3u8
 #EXTINF:-1 group-title="Spor",TIVIBU SPOR 3 HD
 https://www.vavoo.to/play/1004102408/index.m3u8
 #EXTINF:-1 group-title="Spor",TIVIBU SPOR 4
@@ -869,7 +869,7 @@ https://www.vavoo.to/play/1165201807/index.m3u8
 #EXTINF:-1 group-title="Dizi",DIZISMART PREMIUM
 https://www.vavoo.to/play/1195429280/index.m3u8
 
-### BELGESEL (26 kanal) ###
+### BELGESEL (27 kanal) ###
 
 #EXTINF:-1 group-title="Belgesel",4K TR: DISCOVERY CHANNEL HD
 https://www.vavoo.to/play/4017734592/index.m3u8
@@ -903,6 +903,8 @@ https://www.vavoo.to/play/3157210436/index.m3u8
 https://www.vavoo.to/play/1595495667/index.m3u8
 #EXTINF:-1 group-title="Belgesel",DMAX HEVC
 https://www.vavoo.to/play/3928493138/index.m3u8
+#EXTINF:-1 group-title="Belgesel",INVESTIGATION DISCOVERY
+https://www.vavoo.to/play/1372455233/index.m3u8
 #EXTINF:-1 group-title="Belgesel",NAT GEO
 https://www.vavoo.to/play/1960546091/index.m3u8
 #EXTINF:-1 group-title="Belgesel",NAT GEO WILD
@@ -990,7 +992,7 @@ https://www.vavoo.to/play/3063329534/index.m3u8
 #EXTINF:-1 group-title="Müzik",TRT MUZIK RAW
 https://www.vavoo.to/play/433581315/index.m3u8
 
-### GENEL (745 kanal) ###
+### GENEL (744 kanal) ###
 
 #EXTINF:-1 group-title="Genel",24
 https://www.vavoo.to/play/1702937932/index.m3u8
@@ -1969,9 +1971,9 @@ https://www.vavoo.to/play/1166494645/index.m3u8
 #EXTINF:-1 group-title="Genel",NASREDDIN HOCA
 https://www.vavoo.to/play/2930757080/index.m3u8
 #EXTINF:-1 group-title="Genel",NBA TV
-https://www.vavoo.to/play/2430655089/index.m3u8
-#EXTINF:-1 group-title="Genel",NBA TV
 https://www.vavoo.to/play/4247542706/index.m3u8
+#EXTINF:-1 group-title="Genel",NBA TV
+https://www.vavoo.to/play/2430655089/index.m3u8
 #EXTINF:-1 group-title="Genel",NBA TV FHD
 https://www.vavoo.to/play/2462143546/index.m3u8
 #EXTINF:-1 group-title="Genel",NBA TV HD
@@ -1982,8 +1984,6 @@ https://www.vavoo.to/play/85708551/index.m3u8
 https://www.vavoo.to/play/707163099/index.m3u8
 #EXTINF:-1 group-title="Genel",NICKELODEON
 https://www.vavoo.to/play/3092562301/index.m3u8
-#EXTINF:-1 group-title="Genel",NICKELODEON
-https://www.vavoo.to/play/3029254675/index.m3u8
 #EXTINF:-1 group-title="Genel",NICKELODEON HD
 https://www.vavoo.to/play/503443750/index.m3u8
 #EXTINF:-1 group-title="Genel",NILOYA HD+
@@ -2105,9 +2105,9 @@ https://www.vavoo.to/play/3839151666/index.m3u8
 #EXTINF:-1 group-title="Genel",REHBER
 https://www.vavoo.to/play/4152354759/index.m3u8
 #EXTINF:-1 group-title="Genel",REHBER TV
-https://www.vavoo.to/play/4239242367/index.m3u8
-#EXTINF:-1 group-title="Genel",REHBER TV
 https://www.vavoo.to/play/1959665596/index.m3u8
+#EXTINF:-1 group-title="Genel",REHBER TV
+https://www.vavoo.to/play/4239242367/index.m3u8
 #EXTINF:-1 group-title="Genel",RETRO T RK T RK E KLASIK
 https://www.vavoo.to/play/3415299258/index.m3u8
 #EXTINF:-1 group-title="Genel",RUYA TRENI
