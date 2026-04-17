@@ -1,7 +1,7 @@
 #EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"
 # ÖMER TV - Vavoo
-# Güncelleme: 2026-04-17 03:39 UTC
-# Toplam: 1223 kanal
+# Güncelleme: 2026-04-17 05:54 UTC
+# Toplam: 1224 kanal
 
 
 ### ULUSAL (109 kanal) ###
@@ -161,9 +161,9 @@ https://www.vavoo.to/play/1880270561/index.m3u8
 #EXTINF:-1 group-title="Ulusal",SHOW TURK
 https://www.vavoo.to/play/2009772533/index.m3u8
 #EXTINF:-1 group-title="Ulusal",SHOW TV
-https://www.vavoo.to/play/2395422638/index.m3u8
-#EXTINF:-1 group-title="Ulusal",SHOW TV
 https://www.vavoo.to/play/2485009235/index.m3u8
+#EXTINF:-1 group-title="Ulusal",SHOW TV
+https://www.vavoo.to/play/2395422638/index.m3u8
 #EXTINF:-1 group-title="Ulusal",SHOW TV FHD
 https://www.vavoo.to/play/1449499865/index.m3u8
 #EXTINF:-1 group-title="Ulusal",SHOW TV HD
@@ -362,7 +362,7 @@ https://www.vavoo.to/play/3641991612/index.m3u8
 #EXTINF:-1 group-title="Haber",ULKETV HD
 https://www.vavoo.to/play/3203334343/index.m3u8
 
-### SPOR (216 kanal) ###
+### SPOR (217 kanal) ###
 
 #EXTINF:-1 group-title="Spor",4K TR: A SPOR HD
 https://www.vavoo.to/play/1771137539/index.m3u8
@@ -386,6 +386,8 @@ https://www.vavoo.to/play/2262969938/index.m3u8
 https://www.vavoo.to/play/2750507083/index.m3u8
 #EXTINF:-1 group-title="Spor",A SPOR FHD
 https://www.vavoo.to/play/911836506/index.m3u8
+#EXTINF:-1 group-title="Spor",A SPOR HD
+https://www.vavoo.to/play/2556711030/index.m3u8
 #EXTINF:-1 group-title="Spor",A SPOR HEVC
 https://www.vavoo.to/play/2880529208/index.m3u8
 #EXTINF:-1 group-title="Spor",A SPOR RAW
@@ -629,9 +631,9 @@ https://www.vavoo.to/play/3718336295/index.m3u8
 #EXTINF:-1 group-title="Spor",S SPORT
 https://www.vavoo.to/play/3346549722/index.m3u8
 #EXTINF:-1 group-title="Spor",S SPORT 2
-https://www.vavoo.to/play/1313768516/index.m3u8
-#EXTINF:-1 group-title="Spor",S SPORT 2
 https://www.vavoo.to/play/1234604880/index.m3u8
+#EXTINF:-1 group-title="Spor",S SPORT 2
+https://www.vavoo.to/play/1313768516/index.m3u8
 #EXTINF:-1 group-title="Spor",S SPORT+3 MAC SAATI
 https://www.vavoo.to/play/3269372326/index.m3u8
 #EXTINF:-1 group-title="Spor",S SPORT+4 MAC SAATI
@@ -882,9 +884,9 @@ https://www.vavoo.to/play/3079995901/index.m3u8
 #EXTINF:-1 group-title="Belgesel",DISCOVERY CHANNEL HD+
 https://www.vavoo.to/play/695705778/index.m3u8
 #EXTINF:-1 group-title="Belgesel",DISCOVERY ID
-https://www.vavoo.to/play/2095404060/index.m3u8
-#EXTINF:-1 group-title="Belgesel",DISCOVERY ID
 https://www.vavoo.to/play/972730032/index.m3u8
+#EXTINF:-1 group-title="Belgesel",DISCOVERY ID
+https://www.vavoo.to/play/2095404060/index.m3u8
 #EXTINF:-1 group-title="Belgesel",DISCOVERY IDX HD
 https://www.vavoo.to/play/970098662/index.m3u8
 #EXTINF:-1 group-title="Belgesel",DISCOVERY SCIENCE
