@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"
 # ÖMER TV - Vavoo
-# Güncelleme: 2026-04-21 09:11 UTC
+# Güncelleme: 2026-04-21 10:47 UTC
 # Toplam: 1224 kanal
 
 
@@ -95,9 +95,9 @@ https://www.vavoo.to/play/1510783901/index.m3u8
 #EXTINF:-1 group-title="Ulusal",BEYAZ TV RAW
 https://www.vavoo.to/play/3434964684/index.m3u8
 #EXTINF:-1 group-title="Ulusal",FOX
-https://www.vavoo.to/play/145391758/index.m3u8
-#EXTINF:-1 group-title="Ulusal",FOX
 https://www.vavoo.to/play/1498459094/index.m3u8
+#EXTINF:-1 group-title="Ulusal",FOX
+https://www.vavoo.to/play/145391758/index.m3u8
 #EXTINF:-1 group-title="Ulusal",FOX CRIME HEVC
 https://www.vavoo.to/play/3150381038/index.m3u8
 #EXTINF:-1 group-title="Ulusal",FOX TV HD (H265)
@@ -308,9 +308,9 @@ https://www.vavoo.to/play/703698868/index.m3u8
 #EXTINF:-1 group-title="Haber",MEDYA HABER
 https://www.vavoo.to/play/2230968262/index.m3u8
 #EXTINF:-1 group-title="Haber",NTV
-https://www.vavoo.to/play/3164514696/index.m3u8
-#EXTINF:-1 group-title="Haber",NTV
 https://www.vavoo.to/play/3982787280/index.m3u8
+#EXTINF:-1 group-title="Haber",NTV
+https://www.vavoo.to/play/3164514696/index.m3u8
 #EXTINF:-1 group-title="Haber",NTV HABER
 https://www.vavoo.to/play/1237310964/index.m3u8
 #EXTINF:-1 group-title="Haber",NTV HABER HD
@@ -326,9 +326,9 @@ https://www.vavoo.to/play/3614694247/index.m3u8
 #EXTINF:-1 group-title="Haber",SOZCU SZC TV SD
 https://www.vavoo.to/play/1098172953/index.m3u8
 #EXTINF:-1 group-title="Haber",TGRT BELGESEL
-https://www.vavoo.to/play/2753787815/index.m3u8
-#EXTINF:-1 group-title="Haber",TGRT BELGESEL
 https://www.vavoo.to/play/3925938631/index.m3u8
+#EXTINF:-1 group-title="Haber",TGRT BELGESEL
+https://www.vavoo.to/play/2753787815/index.m3u8
 #EXTINF:-1 group-title="Haber",TGRT BELGESEL
 https://www.vavoo.to/play/1743993546/index.m3u8
 #EXTINF:-1 group-title="Haber",TGRT EU
@@ -417,9 +417,9 @@ https://www.vavoo.to/play/1691223078/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN IZ TV
 https://www.vavoo.to/play/3156178359/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION
-https://www.vavoo.to/play/1873478131/index.m3u8
-#EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION
 https://www.vavoo.to/play/3041245607/index.m3u8
+#EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION
+https://www.vavoo.to/play/1873478131/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION 2
 https://www.vavoo.to/play/650851542/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES ACTION 2
@@ -743,9 +743,9 @@ https://www.vavoo.to/play/1528949791/index.m3u8
 #EXTINF:-1 group-title="Spor",TIVIBU SPOR 1 HD
 https://www.vavoo.to/play/2046583925/index.m3u8
 #EXTINF:-1 group-title="Spor",TIVIBU SPOR 2
-https://www.vavoo.to/play/3746683810/index.m3u8
-#EXTINF:-1 group-title="Spor",TIVIBU SPOR 2
 https://www.vavoo.to/play/478254799/index.m3u8
+#EXTINF:-1 group-title="Spor",TIVIBU SPOR 2
+https://www.vavoo.to/play/3746683810/index.m3u8
 #EXTINF:-1 group-title="Spor",TIVIBU SPOR 2 HD
 https://www.vavoo.to/play/4151534486/index.m3u8
 #EXTINF:-1 group-title="Spor",TIVIBU SPOR 3
@@ -984,9 +984,9 @@ https://www.vavoo.to/play/1536461938/index.m3u8
 #EXTINF:-1 group-title="Müzik",MED MUZIK
 https://www.vavoo.to/play/1861216008/index.m3u8
 #EXTINF:-1 group-title="Müzik",TRT MUZIK
-https://www.vavoo.to/play/2362678422/index.m3u8
-#EXTINF:-1 group-title="Müzik",TRT MUZIK
 https://www.vavoo.to/play/2332789634/index.m3u8
+#EXTINF:-1 group-title="Müzik",TRT MUZIK
+https://www.vavoo.to/play/2362678422/index.m3u8
 #EXTINF:-1 group-title="Müzik",TRT MUZIK HD+
 https://www.vavoo.to/play/3063329534/index.m3u8
 #EXTINF:-1 group-title="Müzik",TRT MUZIK RAW
