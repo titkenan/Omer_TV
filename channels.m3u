@@ -1,6 +1,6 @@
 #EXTM3U x-tvg-url="https://bit.ly/TurkoTvEpg"
 # ÖMER TV - Vavoo
-# Güncelleme: 2026-05-01 16:12 UTC
+# Güncelleme: 2026-05-01 17:17 UTC
 # Toplam: 1223 kanal
 
 
@@ -37,9 +37,9 @@ https://www.vavoo.to/play/2693299013/index.m3u8
 #EXTINF:-1 group-title="Ulusal",4K TR: TV8,5 HD
 https://www.vavoo.to/play/1886743624/index.m3u8
 #EXTINF:-1 group-title="Ulusal",A2
-https://www.vavoo.to/play/1735806851/index.m3u8
-#EXTINF:-1 group-title="Ulusal",A2
 https://www.vavoo.to/play/759245925/index.m3u8
+#EXTINF:-1 group-title="Ulusal",A2
+https://www.vavoo.to/play/1735806851/index.m3u8
 #EXTINF:-1 group-title="Ulusal",A2 HD
 https://www.vavoo.to/play/867875861/index.m3u8
 #EXTINF:-1 group-title="Ulusal",A2 HEVC
@@ -159,9 +159,9 @@ https://www.vavoo.to/play/2009772533/index.m3u8
 #EXTINF:-1 group-title="Ulusal",SHOW TURK
 https://www.vavoo.to/play/1880270561/index.m3u8
 #EXTINF:-1 group-title="Ulusal",SHOW TV
-https://www.vavoo.to/play/2395422638/index.m3u8
-#EXTINF:-1 group-title="Ulusal",SHOW TV
 https://www.vavoo.to/play/2485009235/index.m3u8
+#EXTINF:-1 group-title="Ulusal",SHOW TV
+https://www.vavoo.to/play/2395422638/index.m3u8
 #EXTINF:-1 group-title="Ulusal",SHOW TV FHD
 https://www.vavoo.to/play/1449499865/index.m3u8
 #EXTINF:-1 group-title="Ulusal",SHOW TV HD
@@ -201,9 +201,9 @@ https://www.vavoo.to/play/1333128393/index.m3u8
 #EXTINF:-1 group-title="Ulusal",TEVE2 RAW
 https://www.vavoo.to/play/2773252030/index.m3u8
 #EXTINF:-1 group-title="Ulusal",TRT 1
-https://www.vavoo.to/play/115261333/index.m3u8
-#EXTINF:-1 group-title="Ulusal",TRT 1
 https://www.vavoo.to/play/2041026135/index.m3u8
+#EXTINF:-1 group-title="Ulusal",TRT 1
+https://www.vavoo.to/play/115261333/index.m3u8
 #EXTINF:-1 group-title="Ulusal",TRT 1 4K
 https://www.vavoo.to/play/3059837792/index.m3u8
 #EXTINF:-1 group-title="Ulusal",TRT 1 FHD
@@ -223,7 +223,7 @@ https://www.vavoo.to/play/1702470161/index.m3u8
 #EXTINF:-1 group-title="Ulusal",TV8 RAW
 https://www.vavoo.to/play/1991010324/index.m3u8
 
-### HABER (65 kanal) ###
+### HABER (66 kanal) ###
 
 #EXTINF:-1 group-title="Haber",24 HABER HD+ SD
 https://www.vavoo.to/play/3828793616/index.m3u8
@@ -281,6 +281,8 @@ https://www.vavoo.to/play/3806979011/index.m3u8
 https://www.vavoo.to/play/2923004946/index.m3u8
 #EXTINF:-1 group-title="Haber",HABER GLOBAL HD
 https://www.vavoo.to/play/4069774068/index.m3u8
+#EXTINF:-1 group-title="Haber",HABER GLOBAL HD+ SD
+https://www.vavoo.to/play/4144668031/index.m3u8
 #EXTINF:-1 group-title="Haber",HABER T RK HD+ SD
 https://www.vavoo.to/play/3225335454/index.m3u8
 #EXTINF:-1 group-title="Haber",HABER TURK
@@ -429,9 +431,9 @@ https://www.vavoo.to/play/2120218356/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES PREMIERE 2
 https://www.vavoo.to/play/2244069093/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN MOVIES TURK
-https://www.vavoo.to/play/3390575948/index.m3u8
-#EXTINF:-1 group-title="Spor",BEIN MOVIES TURK
 https://www.vavoo.to/play/1835579025/index.m3u8
+#EXTINF:-1 group-title="Spor",BEIN MOVIES TURK
+https://www.vavoo.to/play/3390575948/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN SERIES 1
 https://www.vavoo.to/play/2190922298/index.m3u8
 #EXTINF:-1 group-title="Spor",BEIN SERIES 2
@@ -553,9 +555,9 @@ https://www.vavoo.to/play/2841972698/index.m3u8
 #EXTINF:-1 group-title="Spor",DREAM BEIN OFFICE 9
 https://www.vavoo.to/play/2483365482/index.m3u8
 #EXTINF:-1 group-title="Spor",EUROSPORT 1
-https://www.vavoo.to/play/3271328843/index.m3u8
-#EXTINF:-1 group-title="Spor",EUROSPORT 1
 https://www.vavoo.to/play/3458631461/index.m3u8
+#EXTINF:-1 group-title="Spor",EUROSPORT 1
+https://www.vavoo.to/play/3271328843/index.m3u8
 #EXTINF:-1 group-title="Spor",EUROSPORT 2
 https://www.vavoo.to/play/2307325429/index.m3u8
 #EXTINF:-1 group-title="Spor",EUROSPORT 2
@@ -775,9 +777,9 @@ https://www.vavoo.to/play/2616624010/index.m3u8
 #EXTINF:-1 group-title="Spor",TIVIBUSPOR SPOR HD
 https://www.vavoo.to/play/3653515858/index.m3u8
 #EXTINF:-1 group-title="Spor",TRT SPOR
-https://www.vavoo.to/play/2781429267/index.m3u8
-#EXTINF:-1 group-title="Spor",TRT SPOR
 https://www.vavoo.to/play/2114335424/index.m3u8
+#EXTINF:-1 group-title="Spor",TRT SPOR
+https://www.vavoo.to/play/2781429267/index.m3u8
 #EXTINF:-1 group-title="Spor",TRT SPOR 2 HD
 https://www.vavoo.to/play/3650641237/index.m3u8
 #EXTINF:-1 group-title="Spor",TRT SPOR FHD
@@ -926,7 +928,7 @@ https://www.vavoo.to/play/3340997026/index.m3u8
 #EXTINF:-1 group-title="Belgesel",TRT BELGESEL RAW
 https://www.vavoo.to/play/836826697/index.m3u8
 
-### ÇOCUK (14 kanal) ###
+### ÇOCUK (13 kanal) ###
 
 #EXTINF:-1 group-title="Çocuk",CARTOON NETWORK
 https://www.vavoo.to/play/478549032/index.m3u8
@@ -940,8 +942,6 @@ https://www.vavoo.to/play/2193427330/index.m3u8
 https://www.vavoo.to/play/1310133020/index.m3u8
 #EXTINF:-1 group-title="Çocuk",ILAHI COCUK TV
 https://www.vavoo.to/play/401592407/index.m3u8
-#EXTINF:-1 group-title="Çocuk",MINIKA GO
-https://www.vavoo.to/play/2937701421/index.m3u8
 #EXTINF:-1 group-title="Çocuk",SMART COCUK
 https://www.vavoo.to/play/4277750275/index.m3u8
 #EXTINF:-1 group-title="Çocuk",SMART COCUK HD
@@ -1143,11 +1143,11 @@ https://www.vavoo.to/play/1633587820/index.m3u8
 #EXTINF:-1 group-title="Genel",AKILLI TAVSAN MOMO
 https://www.vavoo.to/play/4093001640/index.m3u8
 #EXTINF:-1 group-title="Genel",AKIT TV
+https://www.vavoo.to/play/1948681011/index.m3u8
+#EXTINF:-1 group-title="Genel",AKIT TV
 https://www.vavoo.to/play/1862240206/index.m3u8
 #EXTINF:-1 group-title="Genel",AKIT TV
 https://www.vavoo.to/play/2702391715/index.m3u8
-#EXTINF:-1 group-title="Genel",AKIT TV
-https://www.vavoo.to/play/1948681011/index.m3u8
 #EXTINF:-1 group-title="Genel",AKLILI TV
 https://www.vavoo.to/play/3737299250/index.m3u8
 #EXTINF:-1 group-title="Genel",AKSARAY KANAL 68
@@ -1587,9 +1587,9 @@ https://www.vavoo.to/play/1218353983/index.m3u8
 #EXTINF:-1 group-title="Genel",ETV MANISA
 https://www.vavoo.to/play/2024954002/index.m3u8
 #EXTINF:-1 group-title="Genel",EURO D
-https://www.vavoo.to/play/3358854668/index.m3u8
-#EXTINF:-1 group-title="Genel",EURO D
 https://www.vavoo.to/play/1290434890/index.m3u8
+#EXTINF:-1 group-title="Genel",EURO D
+https://www.vavoo.to/play/3358854668/index.m3u8
 #EXTINF:-1 group-title="Genel",EURO D
 https://www.vavoo.to/play/2784530383/index.m3u8
 #EXTINF:-1 group-title="Genel",FASIL NEVIZADE GECELERI
@@ -1659,9 +1659,9 @@ https://www.vavoo.to/play/55116964/index.m3u8
 #EXTINF:-1 group-title="Genel",HABITAT
 https://www.vavoo.to/play/1281270568/index.m3u8
 #EXTINF:-1 group-title="Genel",HALK TV
-https://www.vavoo.to/play/4148513719/index.m3u8
-#EXTINF:-1 group-title="Genel",HALK TV
 https://www.vavoo.to/play/3986444106/index.m3u8
+#EXTINF:-1 group-title="Genel",HALK TV
+https://www.vavoo.to/play/4148513719/index.m3u8
 #EXTINF:-1 group-title="Genel",HALK TV HD
 https://www.vavoo.to/play/1771999100/index.m3u8
 #EXTINF:-1 group-title="Genel",HALK TV SD
@@ -2321,9 +2321,9 @@ https://www.vavoo.to/play/4073129368/index.m3u8
 #EXTINF:-1 group-title="Genel",TV 100
 https://www.vavoo.to/play/3769488982/index.m3u8
 #EXTINF:-1 group-title="Genel",TV 100
-https://www.vavoo.to/play/1685299472/index.m3u8
-#EXTINF:-1 group-title="Genel",TV 100
 https://www.vavoo.to/play/163520723/index.m3u8
+#EXTINF:-1 group-title="Genel",TV 100
+https://www.vavoo.to/play/1685299472/index.m3u8
 #EXTINF:-1 group-title="Genel",TV 100 HEVC
 https://www.vavoo.to/play/3271096410/index.m3u8
 #EXTINF:-1 group-title="Genel",TV 264
